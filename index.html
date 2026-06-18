@@ -3,362 +3,559 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emily Flow – רקדנית בטן טרייבל פיוז'ן, פרפורמרית אש</title>
+  <title>Emily Flow – אמילי פלואו</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue: #03a9f4;
-      --blue-dark: #026e9f;
-      --dark: #17252a;
-      --body-color: rgb(70, 112, 127);
-      --light-bg: #F5FAFD;
-      --transition: 0.4s ease;
+      --gold:        #c9935a;
+      --gold-light:  #e8b98a;
+      --gold-dark:   #a07040;
+      --teal:        #1e4d5c;
+      --teal-light:  #2a6478;
+      --dark:        #1a2e35;
+      --cream:       #fdf9f5;
+      --cream-dark:  #f5ede2;
+      --text:        #4a5568;
+      --text-light:  #718096;
+      --white:       #ffffff;
+      --radius:      12px;
+      --shadow-sm:   0 2px 12px rgba(0,0,0,0.08);
+      --shadow-md:   0 8px 32px rgba(0,0,0,0.12);
+      --shadow-lg:   0 20px 60px rgba(0,0,0,0.18);
+      --transition:  0.35s ease;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Heebo', sans-serif;
       font-size: 16px;
-      line-height: 1.6;
-      color: var(--body-color);
-      background: #fff;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--white);
     }
 
     img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--gold); text-decoration: none; }
 
-    a { color: var(--blue); text-decoration: none; }
-
-    /* ── NAV ── */
+    /* ───────────── NAV ───────────── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 1000;
-      padding: 20px 40px;
+      padding: 24px 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background var(--transition), padding var(--transition), box-shadow var(--transition);
+      transition: all var(--transition);
     }
 
     nav.scrolled {
-      background: #fff;
-      padding: 10px 40px;
-      box-shadow: 0 0 4px rgba(0,0,0,0.2);
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      padding: 14px 48px;
+      box-shadow: var(--shadow-sm);
     }
 
     .nav-logo {
+      font-family: 'Playfair Display', serif;
       font-size: 22px;
-      font-weight: 600;
-      color: #fff;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.5px;
       transition: color var(--transition);
     }
-    nav.scrolled .nav-logo { color: #000; }
+    nav.scrolled .nav-logo { color: var(--dark); }
 
     .nav-links {
       display: flex;
-      gap: 40px;
+      gap: 36px;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #fff;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.9);
+      position: relative;
       transition: color var(--transition);
     }
-    nav.scrolled .nav-links a { color: var(--blue-dark); }
-    .nav-links a:hover { color: rgb(166, 220, 244); }
-    nav.scrolled .nav-links a:hover { color: var(--blue); }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; right: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover::after { width: 100%; }
+    nav.scrolled .nav-links a { color: var(--teal); }
+    .nav-links a:hover { color: var(--gold); }
+    nav.scrolled .nav-links a:hover { color: var(--gold); }
 
+    /* Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
-      background: rgba(0,0,0,0.1);
+      background: none;
       border: none;
-      border-radius: 50%;
-      padding: 8px;
+      padding: 4px;
     }
     .hamburger span {
       display: block;
-      width: 20px;
-      height: 2px;
-      background: #fff;
+      width: 24px; height: 2px;
+      background: var(--white);
       border-radius: 2px;
       transition: background var(--transition);
     }
-    nav.scrolled .hamburger span { background: #333; }
+    nav.scrolled .hamburger span { background: var(--dark); }
 
-    /* Mobile nav drawer */
+    /* Mobile Drawer */
+    .drawer-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 1998;
+      display: none;
+      backdrop-filter: blur(2px);
+    }
+    .drawer-overlay.open { display: block; }
+
     .mobile-drawer {
       position: fixed;
-      top: 0; left: 0;
-      width: 300px;
-      height: 100vh;
-      background: #222B34;
-      z-index: 2000;
-      transform: translateX(-100%);
+      top: 0; right: 0;
+      width: 280px; height: 100vh;
+      background: var(--dark);
+      z-index: 1999;
+      transform: translateX(100%);
       transition: transform var(--transition);
-      padding: 60px 0 40px;
+      padding: 80px 0 40px;
       display: flex;
       flex-direction: column;
     }
     .mobile-drawer.open { transform: translateX(0); }
-    .mobile-drawer .drawer-logo {
-      color: #fff;
+
+    .drawer-logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
       font-size: 20px;
-      font-weight: 600;
-      padding: 0 40px 30px;
+      padding: 0 32px 28px;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-    .mobile-drawer ul {
-      list-style: none;
-      margin-top: 10px;
-    }
+
+    .mobile-drawer ul { list-style: none; margin-top: 8px; }
     .mobile-drawer ul a {
       display: block;
-      padding: 14px 40px;
-      color: #fff;
+      padding: 16px 32px;
+      color: rgba(255,255,255,0.85);
       font-size: 14px;
-      border-bottom: 1px solid rgba(128,128,128,0.2);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color var(--transition), padding var(--transition);
     }
+    .mobile-drawer ul a:hover { color: var(--gold); padding-right: 40px; }
 
-    .drawer-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 1999;
-      display: none;
-    }
-    .drawer-overlay.open { display: block; }
-
-    /* ── HERO ── */
+    /* ───────────── HERO ───────────── */
     .hero {
       min-height: 100vh;
-      background-color: var(--blue);
       background-image: url('assets/hero-bg.jpg');
       background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-position: center top;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 140px 20px 80px;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(26, 46, 53, 0.55) 0%,
+        rgba(26, 46, 53, 0.70) 60%,
+        rgba(26, 46, 53, 0.85) 100%
+      );
     }
 
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 800px;
+      max-width: 720px;
+      padding: 140px 24px 80px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border: 1px solid var(--gold-light);
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-bottom: 28px;
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.375rem);
-      font-weight: 300;
-      color: #fff;
-      line-height: 1.26;
-      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .hero-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 24px;
     }
 
     .hero p {
-      font-size: 1.15rem;
-      color: #fff;
-      line-height: 1.8;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 2;
       font-weight: 300;
     }
 
-    /* ── SECTIONS ── */
-    section { padding: 90px 20px; }
+    .hero-cta {
+      display: inline-block;
+      margin-top: 36px;
+      padding: 14px 36px;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 50px;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 20px rgba(201, 147, 90, 0.4);
+    }
+    .hero-cta:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(201, 147, 90, 0.5);
+      color: var(--white);
+    }
+
+    /* ───────────── SECTIONS ───────────── */
+    section { padding: 100px 24px; }
 
     .container {
-      max-width: 1200px;
+      max-width: 1160px;
       margin: 0 auto;
       width: 100%;
     }
 
-    /* ── SERVICES ── */
-    .services {
-      background: var(--light-bg);
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 12px;
     }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-light);
+      max-width: 520px;
+      margin: 0 auto 60px;
+    }
+
+    .section-header { text-align: center; margin-bottom: 60px; }
+
+    .title-divider {
+      width: 50px; height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 16px auto 20px;
+    }
+
+    /* ───────────── SERVICES ───────────── */
+    .services { background: var(--cream); }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
+      gap: 28px;
     }
 
-    .service-card { text-align: center; }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 44px 32px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+      border-bottom: 3px solid transparent;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-bottom-color: var(--gold);
+    }
 
-    .service-icon {
-      width: 80px;
-      height: 80px;
+    .service-icon-wrap {
+      width: 76px; height: 76px;
       border-radius: 50%;
-      background: var(--blue);
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 16px;
-      box-shadow: 0 10px 30px 2px rgba(49,52,57,0.3);
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 24px rgba(201, 147, 90, 0.3);
+      transition: transform var(--transition);
+    }
+    .service-card:hover .service-icon-wrap { transform: scale(1.08); }
+
+    .service-icon-wrap svg {
+      fill: var(--white);
+      width: 32px; height: 32px;
     }
 
-    .service-icon svg {
-      fill: #fff;
-      width: 36px;
-      height: 36px;
-    }
-
-    .service-card h5 {
-      font-size: 1.1rem;
-      font-weight: 600;
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
       color: var(--dark);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      line-height: 1.4;
     }
 
-    .service-card p { font-size: 15px; }
+    .service-card p {
+      font-size: 14.5px;
+      color: var(--text-light);
+      line-height: 1.75;
+    }
 
-    /* ── GALLERY ── */
-    .gallery { background: #fff; }
+    /* ───────────── GALLERY ───────────── */
+    .gallery { background: var(--white); }
 
-    .gallery-grid {
+    .gallery-grid-top {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-bottom: 20px;
+      gap: 16px;
+      margin-bottom: 16px;
     }
 
     .gallery-grid-bottom {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 16px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: var(--radius);
+      position: relative;
+      cursor: pointer;
     }
 
     .gallery-item img {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      box-shadow: 0 1px 3px 1px rgba(0,0,0,0.1);
+      transition: transform 0.5s ease;
     }
+    .gallery-item:hover img { transform: scale(1.06); }
 
-    .gallery-caption {
-      text-align: center;
-      margin-top: 10px;
+    .gallery-item-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,46,53,0.7) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity var(--transition);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+    .gallery-item-overlay span {
+      color: var(--white);
       font-size: 14px;
-      color: var(--body-color);
+      font-weight: 500;
     }
 
-    .gallery-item-wide img {
-      width: 100%;
-      aspect-ratio: 3 / 2;
+    .gallery-wide img {
+      aspect-ratio: 16 / 9;
       object-fit: cover;
-      box-shadow: 0 1px 3px 1px rgba(0,0,0,0.1);
+      width: 100%;
+      transition: transform 0.5s ease;
     }
 
-    /* ── CONTACT ── */
-    .contact { background: #fff; }
+    /* ───────────── ABOUT / CONTACT ───────────── */
+    .contact-section { background: var(--cream); }
 
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 80px;
       align-items: center;
     }
 
-    .contact-info h5 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 20px;
-    }
+    .contact-info .section-label { text-align: right; }
+    .contact-info .section-title { text-align: right; }
+    .contact-info .title-divider { margin: 16px 0 24px; }
 
     .contact-info p {
-      font-size: 1.1rem;
+      color: var(--text);
+      font-size: 15px;
       line-height: 2;
-      font-weight: 300;
-      color: rgb(37, 41, 42);
+      margin-bottom: 32px;
     }
 
-    .contact-photo {
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 20px;
+      background: var(--white);
+      border-radius: 10px;
+      border: 1px solid rgba(201, 147, 90, 0.2);
+      color: var(--dark);
+      font-size: 14px;
+      font-weight: 500;
+      transition: all var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+    .social-link:hover {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+      transform: translateX(-4px);
+      box-shadow: 0 6px 20px rgba(201,147,90,0.3);
+    }
+
+    .social-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition);
+      flex-shrink: 0;
+    }
+    .social-link:hover .social-icon { background: rgba(255,255,255,0.2); }
+
+    .social-icon svg {
+      width: 18px; height: 18px;
+      fill: var(--gold);
+      transition: fill var(--transition);
+    }
+    .social-link:hover .social-icon svg { fill: var(--white); }
+
+    .contact-photo-wrap {
       position: relative;
     }
 
-    .contact-photo img {
-      width: 100%;
-      border-radius: 2px;
-      box-shadow: 0 10px 30px 2px rgba(0,0,0,0.1);
-    }
-
-    .contact-photo::after {
+    .contact-photo-wrap::before {
       content: '';
       position: absolute;
-      top: 5%;
-      left: -5%;
-      right: 5%;
-      bottom: -5%;
-      border: 10px solid var(--blue);
-      z-index: -1;
+      top: -16px; left: -16px;
+      right: 16px; bottom: 16px;
+      border: 3px solid var(--gold-light);
+      border-radius: var(--radius);
+      z-index: 0;
+      opacity: 0.5;
     }
 
-    /* ── FOOTER ── */
+    .contact-photo-wrap img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      object-fit: cover;
+    }
+
+    /* ───────────── FOOTER ───────────── */
     footer {
-      background: #fff;
-      padding: 30px 20px;
+      background: var(--dark);
+      padding: 40px 24px;
       text-align: center;
-      font-size: 14px;
-      color: var(--body-color);
-      border-top: 1px solid #eee;
     }
 
-    footer a { color: var(--blue); }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
 
-    /* ── RESPONSIVE ── */
+    .footer-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ───────────── SCROLL REVEAL ───────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ───────────── RESPONSIVE ───────────── */
     @media (max-width: 1023px) {
-      section { padding: 60px 20px; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 70px 24px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid-top { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { gap: 50px; }
     }
 
     @media (max-width: 767px) {
-      section { padding: 30px 16px; }
-
-      nav { padding: 0 20px; height: 56px; }
-      nav.scrolled { padding: 0 20px; }
-
+      section { padding: 50px 16px; }
+      nav { padding: 16px 20px; }
+      nav.scrolled { padding: 12px 20px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
-
-      .hero { padding: 100px 20px 60px; }
-
-      .services-grid { grid-template-columns: 1fr; gap: 30px; }
-
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .gallery-grid-bottom { grid-template-columns: 1fr; gap: 10px; }
-
-      .contact-grid { grid-template-columns: 1fr; gap: 30px; }
-      .contact-photo::after { display: none; }
+      .hero-content { padding: 120px 16px 60px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid-top { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid-bottom { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-photo-wrap::before { display: none; }
+      .contact-info .title-divider { margin: 16px 0 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ── NAV ── -->
   <nav id="main-nav">
     <a href="#" class="nav-logo">Emily Flow</a>
     <ul class="nav-links">
@@ -371,7 +568,7 @@
     </button>
   </nav>
 
-  <!-- MOBILE DRAWER -->
+  <!-- ── MOBILE DRAWER ── -->
   <div class="drawer-overlay" id="drawer-overlay"></div>
   <div class="mobile-drawer" id="mobile-drawer">
     <div class="drawer-logo">Emily Flow</div>
@@ -382,115 +579,167 @@
     </ul>
   </div>
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Emily Flow – אמילי פלואו</h1>
+      <span class="hero-tag">רקדנית · מורה · מנחה</span>
+      <h1>אמילי פלואו</h1>
+      <div class="hero-divider"></div>
       <p>
-        רקדנית בטן טרייבל פיוז'ן<br>
-        פרפורמרית אש<br>
+        רקדנית בטן טרייבל פיוז'ן ופרפורמרית אש<br>
         מורה ליוגה אשטנגה ויניאסה<br>
         מחברת ומנחה סדנאת "חיבור לעצמי"
       </p>
+      <a href="#services" class="hero-cta">גלי עוד</a>
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- ── SERVICES ── -->
   <section class="services" id="services">
     <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">מה אני מציעה</span>
+        <h2 class="section-title">שירותים</h2>
+        <div class="title-divider"></div>
+        <p class="section-subtitle">חיבור לגוף, לנפש ולרוח דרך תנועה, נשימה ומודעות</p>
+      </div>
+
       <div class="services-grid">
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1408 1896.0833">
-              <path d="M1384 927L56 1665q-23 13-39.5 3T0 1632V160q0-26 16.5-36t39.5 3l1328 738q23 13 23 31t-23 31z"/>
-            </svg>
-          </div>
-          <h5>מנחה סדנאת "חיבור לעצמי"</h5>
-          <p>כלים ושיטות להתחבר לכאן ועכשיו. נשוחח על נושאים כמו מה זה הפרעת קשב, היבטים שונים על דפוסי מחשבה, מה הקשר בין מודעות למדיטציה ונשימה. בנוסף, נלמד תרגילי נשימה, נתרגל מדיטציה ותרגילי Emotional Release.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1664 1896.0833">
-              <path d="M1664 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5T1321 1619q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5T301 1569q0-6 2-20l86-500L25 695Q0 668 0 647q0-37 56-46l502-73L783 73q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"/>
-            </svg>
-          </div>
-          <h5>מורה ליוגה אשטנגה ויניאסה</h5>
-          <p>יוגה כדרך חיים. החיבור של התנועה והנשימה, המודעות והנוכחות לעכשיו.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
+        <div class="service-card reveal">
+          <div class="service-icon-wrap">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1896.0833">
               <path d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26T145 952.5 77 855 23.5 734 0 596q0-220 127-344t351-124q62 0 126.5 21.5t120 58T820 276t76 68q36-36 76-68t95.5-68.5 120-58T1314 128q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z"/>
             </svg>
           </div>
-          <h5>רקדנית בטן טרייבל פיוז'ן</h5>
-          <p>חיבור לגוף דרך ריקוד טרייבל פיוז'ן. נלמד להכיר תנועות ושרירים שלא היינו מודעים אליהם תוך ריקוד משחרר, מחזק, ומהפנט! ואיך הם יכולים לעזור לנו בתנועה ובריקוד ובחיבור של הגוף והנפש.</p>
+          <h3>רקדנית בטן טרייבל פיוז'ן</h3>
+          <p>חיבור לגוף דרך ריקוד טרייבל פיוז'ן. נלמד להכיר תנועות ושרירים שלא היינו מודעים אליהם, תוך ריקוד משחרר, מחזק ומהפנט.</p>
         </div>
 
+        <div class="service-card reveal">
+          <div class="service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1664 1896.0833">
+              <path d="M1664 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5T1321 1619q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5T301 1569q0-6 2-20l86-500L25 695Q0 668 0 647q0-37 56-46l502-73L783 73q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"/>
+            </svg>
+          </div>
+          <h3>מורה ליוגה אשטנגה ויניאסה</h3>
+          <p>יוגה כדרך חיים. החיבור של התנועה והנשימה, המודעות והנוכחות לרגע הזה — כאן ועכשיו.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1408 1896.0833">
+              <path d="M1384 927L56 1665q-23 13-39.5 3T0 1632V160q0-26 16.5-36t39.5 3l1328 738q23 13 23 31t-23 31z"/>
+            </svg>
+          </div>
+          <h3>סדנאת "חיבור לעצמי"</h3>
+          <p>כלים ושיטות להתחבר לכאן ועכשיו. תרגילי נשימה, מדיטציה ו-Emotional Release — בדרך לחיים מודעים ומאוזנים יותר.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- ── GALLERY ── -->
   <section class="gallery" id="gallery">
     <div class="container">
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="assets/gallery-1.jpg" alt="Emily Flow" loading="lazy" />
+      <div class="section-header reveal">
+        <span class="section-label">רגעים</span>
+        <h2 class="section-title">גלריה</h2>
+        <div class="title-divider"></div>
+      </div>
+
+      <div class="gallery-grid-top">
+        <div class="gallery-item reveal">
+          <img src="assets/gallery-1.jpg" alt="אמילי פלואו" loading="lazy" />
+          <div class="gallery-item-overlay"><span>ריקוד בטן</span></div>
         </div>
-        <div class="gallery-item">
-          <img src="assets/gallery-2.jpg" alt="Emily Flow" loading="lazy" />
+        <div class="gallery-item reveal">
+          <img src="assets/gallery-2.jpg" alt="אמילי פלואו" loading="lazy" />
+          <div class="gallery-item-overlay"><span>אמילי פלואו</span></div>
         </div>
-        <div class="gallery-item">
-          <img src="assets/gallery-3.jpg" alt="Free Earth Festival" loading="lazy" />
+        <div class="gallery-item reveal">
+          <img src="assets/gallery-3.jpg" alt="פסטיבל" loading="lazy" />
+          <div class="gallery-item-overlay"><span>Free Earth Festival</span></div>
         </div>
-        <div class="gallery-item">
-          <img src="assets/gallery-4.jpg" alt="Emily Flow" loading="lazy" />
+        <div class="gallery-item reveal">
+          <img src="assets/gallery-4.jpg" alt="אמילי פלואו" loading="lazy" />
+          <div class="gallery-item-overlay"><span>פרפורמנס</span></div>
         </div>
       </div>
-      <div class="gallery-grid-bottom">
-        <div class="gallery-item">
-          <div class="gallery-item-wide">
-            <img src="assets/gallery-5.jpg" alt="סדנאת ריקוד טרייבל פיוז'ן" loading="lazy" />
-          </div>
-          <p class="gallery-caption">סדנאת ריקוד טרייבל פיוז'ן</p>
+
+      <div class="gallery-grid-bottom" style="margin-top: 16px;">
+        <div class="gallery-item gallery-wide reveal">
+          <img src="assets/gallery-5.jpg" alt="סדנאת ריקוד טרייבל פיוז'ן" loading="lazy" />
+          <div class="gallery-item-overlay"><span>סדנאת ריקוד טרייבל פיוז'ן</span></div>
         </div>
-        <div class="gallery-item">
-          <div class="gallery-item-wide">
-            <img src="assets/gallery-6.jpg" alt="סדנאת חיבור לעצמי" loading="lazy" />
-          </div>
-          <p class="gallery-caption">סדנאת חיבור לעצמי</p>
+        <div class="gallery-item gallery-wide reveal">
+          <img src="assets/gallery-6.jpg" alt="סדנאת חיבור לעצמי" loading="lazy" />
+          <div class="gallery-item-overlay"><span>סדנאת חיבור לעצמי</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact" style="background: var(--light-bg);">
+  <!-- ── CONTACT ── -->
+  <section class="contact-section" id="contact">
     <div class="container">
       <div class="contact-grid">
-        <div class="contact-info">
-          <h5>צור קשר</h5>
-          <p>
-            Instagram : Emily__Flow<br>
-            Facebook : Emily Flow<br>
-            Youtube : Emily Flow<br>
-            Tik Tok : Emily__Flow – אמילי פלואו
-          </p>
+        <div class="contact-info reveal">
+          <span class="section-label">בואי נדבר</span>
+          <h2 class="section-title">צור קשר</h2>
+          <div class="title-divider"></div>
+          <p>שמחה לשמוע ממך!<br>ניתן למצוא אותי בכל הרשתות החברתיות:</p>
+
+          <div class="social-links">
+            <a href="https://www.instagram.com/emily__flow" target="_blank" rel="noopener" class="social-link">
+              <div class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </div>
+              Instagram · Emily__Flow
+            </a>
+
+            <a href="https://www.facebook.com/EmilyFlow" target="_blank" rel="noopener" class="social-link">
+              <div class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </div>
+              Facebook · Emily Flow
+            </a>
+
+            <a href="https://www.youtube.com/@EmilyFlow" target="_blank" rel="noopener" class="social-link">
+              <div class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+                </svg>
+              </div>
+              YouTube · Emily Flow
+            </a>
+
+            <a href="https://www.tiktok.com/@emily__flow" target="_blank" rel="noopener" class="social-link">
+              <div class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                </svg>
+              </div>
+              TikTok · Emily__Flow
+            </a>
+          </div>
         </div>
-        <div class="contact-photo">
-          <img src="assets/contact-photo.jpg" alt="Emily Flow" loading="lazy" />
+
+        <div class="contact-photo-wrap reveal">
+          <img src="assets/contact-photo.jpg" alt="אמילי פלואו" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ── FOOTER ── -->
   <footer>
-    <p>© 2026 Emily Flow – אמילי פלואו</p>
+    <p class="footer-logo">Emily Flow</p>
+    <p class="footer-text">© 2026 אמילי פלואו · כל הזכויות שמורות</p>
   </footer>
 
   <script>
@@ -498,27 +747,31 @@
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
-    });
+    }, { passive: true });
 
     // Mobile drawer
     const hamburger = document.getElementById('hamburger');
-    const drawer = document.getElementById('mobile-drawer');
-    const overlay = document.getElementById('drawer-overlay');
+    const drawer    = document.getElementById('mobile-drawer');
+    const overlay   = document.getElementById('drawer-overlay');
 
-    function openDrawer() {
-      drawer.classList.add('open');
-      overlay.classList.add('open');
-    }
-    function closeDrawer() {
-      drawer.classList.remove('open');
-      overlay.classList.remove('open');
-    }
+    const openDrawer  = () => { drawer.classList.add('open'); overlay.classList.add('open'); };
+    const closeDrawer = () => { drawer.classList.remove('open'); overlay.classList.remove('open'); };
 
     hamburger.addEventListener('click', openDrawer);
     overlay.addEventListener('click', closeDrawer);
-    document.querySelectorAll('.drawer-link').forEach(link => {
-      link.addEventListener('click', closeDrawer);
-    });
+    document.querySelectorAll('.drawer-link').forEach(l => l.addEventListener('click', closeDrawer));
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
