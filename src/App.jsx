@@ -393,6 +393,16 @@ function About() {
               בין אם מדובר בריקוד לבן ובת זוג בחופה, בפרפורמנס אש בפסטיבל, או בסדנת מדיטציה —
               המטרה היא תמיד אותה: לגרום לאנשים להרגיש משהו אמיתי.
             </p>
+            <p className="text-ink/80 font-medium">
+              ניסיון עשיר בהופעות לחינות, חתונות ואירועים ברחבי הארץ.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-1">
+              {['חינה', 'חתונה', 'מסיבת רווקות', 'חאפלה', 'פסטיבלים', 'מסעדות שף', 'אירועי בוטיק'].map(tag => (
+                <span key={tag} className="px-3 py-1 border border-ink/20 text-ink/60 text-[12px] font-semibold tracking-wide">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
           <div className="mt-10 flex flex-wrap gap-4">
             <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
