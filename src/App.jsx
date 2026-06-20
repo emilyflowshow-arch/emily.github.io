@@ -111,7 +111,7 @@ function Nav() {
 /* ── Hero ────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section id="home" className="overflow-hidden" style={{background: 'linear-gradient(to bottom, #b6bdeb 0%, #dfc3aa 100%)'}}>
+    <section id="home" className="overflow-hidden" style={{background: 'linear-gradient(to bottom, rgb(162,177,231) 0%, rgb(220,224,245) 45%, rgb(171,141,115) 100%)'}}>
 
       {/* Mobile: תמונה למעלה, טקסט למטה */}
       <div className="md:hidden">
@@ -141,11 +141,10 @@ function Hero() {
 
       {/* Desktop: תמונה טבעית שמאלה, גרדיאנט מטשטש לימין */}
       <div className="hidden md:flex relative h-[88vh] overflow-hidden">
-        {/* התמונה בגובה מלא, רוחב טבעי — רקדנית לא נחתכת */}
+        {/* התמונה בגובה מלא, רוחב טבעי — נמסה לשקיפות מימין */}
         <img src="/hero-bg.jpg" alt="Emily Flow"
-          className="absolute top-0 left-0 h-full w-auto animate-fade-in" />
-        {/* גרדיאנט שמטשטש את קצה התמונה לתוך הרקע */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#dfc3aa]" style={{background: 'linear-gradient(to right, transparent 30%, #d4c8be 60%, #dfc3aa 100%)'}} />
+          className="absolute top-0 left-0 h-full w-auto animate-fade-in"
+          style={{WebkitMaskImage: 'linear-gradient(to right, black 40%, transparent 72%)', maskImage: 'linear-gradient(to right, black 40%, transparent 72%)'}} />
         <div className="relative z-10 flex flex-col justify-center px-16 pt-32 pb-6 max-w-xl ml-auto">
           <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up">
             ריקוד · אש · יוגה
