@@ -99,7 +99,7 @@ export default function HennaPage() {
             <div className="sticky top-28">
               <div className="relative mb-8">
                 <div className="absolute -top-3 -left-3 w-full h-full border-2 border-teal/40" />
-                <img src="/assets/gallery-1.jpg" alt="ריקוד בטן לחינה — אמילי פלואו"
+                <img src="/assets/henna-hero.jpg" alt="ריקוד בטן לחינה — אמילי פלואו"
                   className="relative z-10 w-full object-cover shadow-2xl" />
               </div>
 
