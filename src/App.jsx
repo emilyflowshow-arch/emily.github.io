@@ -144,7 +144,7 @@ function Hero() {
         <div className="absolute inset-0">
           <img src="/hero-bg.jpg" alt="Emily Flow"
             className="w-full h-full object-cover object-left animate-fade-in" />
-          <div className="absolute inset-0 bg-gradient-to-l from-paper-warm/80 via-paper-warm/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-l from-paper-warm/70 via-transparent to-transparent" />
         </div>
         <div className="relative z-10 flex flex-col justify-end pb-6 px-20 pt-36 max-w-2xl ml-auto">
           <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up">
