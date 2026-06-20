@@ -120,13 +120,13 @@ function Hero() {
             className="w-full h-full object-cover object-center animate-fade-in" />
         </div>
         <div className="px-8 py-10">
-          <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-4 block">
-            ריקוד · אש · יוגה
+          <span className="text-ink text-[13px] font-black tracking-[4px] uppercase mb-4 block">
+            תנועה · נוכחות · חוויה
           </span>
           <h1 className="font-sans font-black text-ink leading-[0.92] mb-6 uppercase tracking-tight text-[clamp(3.5rem,14vw,6rem)]">
             אמילי<br />פלואו
           </h1>
-          <p className="text-ink/60 text-[15px] leading-[1.8] mb-8 font-light">
+          <p className="text-ink/80 text-[15px] leading-[1.8] mb-8 font-semibold">
             רקדנית בטן טרייבל פיוז׳ן ופרפורמרית פלואו ואש ·
             מורה ליוגה אשטנגה ויניאסה ·
             מנחת מדיטציה ומיינדפולנס ·
