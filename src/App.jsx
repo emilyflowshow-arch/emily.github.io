@@ -211,7 +211,7 @@ function Henna() {
         <div ref={ref} className={`reveal ${visible ? 'visible' : ''}`}>
           <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-4 block">מוצר דגל</span>
           <h2 className="font-sans font-black text-ink uppercase tracking-tight text-display-md mb-6">
-            ריקוד בטן<br />לחינה
+            ריקודי בטן<br />לחינה
           </h2>
           <div className="space-y-5 text-ink/65 text-[15px] leading-[1.9] font-light">
             <p>
@@ -272,7 +272,7 @@ const SERVICES = [
     num: '01',
     title: "ריקודי בטן לחינה",
     subtitle: 'מוצר דגל',
-    desc: "הופעת ריקודי בטן לחינה היא אחד הרגעים הכי קסומים בערב — רקדנית בטן שמביאה אנרגיה, צבע ושמחה לחגיגה שלכן. אני מתמחה בריקוד בטן טרייבל לאירועי חינה: הופעה מלאת אנרגיה ושמחה שמותאמת לאווירה, למוזיקה ולכלה. מחפשות רקדנית בטן לחינה? אני כאן.",
+    desc: "אמילי פלואו — רקדנית בטן שמביאה אנרגיה, צבע ושמחה לחגיגה שלכן. הופעת ריקודי בטן לחינה היא אחד הרגעים הכי קסומים בערב. אני מתמחה בריקוד בטן טרייבל לאירועי חינה: הופעה מלאת אנרגיה ושמחה שמותאמת לאווירה, למוזיקה ולכלה. מחפשות רקדנית בטן לחינה? אני כאן.",
   },
   {
     num: '02',
