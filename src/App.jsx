@@ -141,7 +141,7 @@ function Hero() {
 
       {/* Desktop: תמונה מלאה, טקסט ימין */}
       <div className="hidden md:flex relative min-h-screen">
-        <div className="absolute inset-0">
+        <div className="absolute top-20 bottom-0 left-0 right-0">
           <img src="/hero-bg.jpg" alt="Emily Flow"
             className="w-full h-full object-cover object-left animate-fade-in" />
           <div className="absolute inset-0 bg-gradient-to-l from-paper-warm/95 via-paper-warm/50 to-transparent" />
