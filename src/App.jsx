@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import './App.css'
 
 function useReveal(delay = 0) {
@@ -222,11 +223,18 @@ function Henna() {
             ))}
           </div>
 
-          <a href="#contact"
-            className="mt-10 inline-block px-10 py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase
-              hover:bg-teal-dark transition-colors duration-300">
-            הזמיני עכשיו
-          </a>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link to="/חינה"
+              className="inline-block px-10 py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase
+                hover:bg-teal-dark transition-colors duration-300">
+              קראי עוד
+            </Link>
+            <a href="#contact"
+              className="inline-block px-10 py-4 border-2 border-ink text-ink text-[12px] font-bold tracking-[3px] uppercase
+                hover:bg-ink hover:text-paper transition-all duration-300">
+              הזמיני עכשיו
+            </a>
+          </div>
         </div>
 
         {/* Image */}
