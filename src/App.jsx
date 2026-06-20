@@ -43,8 +43,8 @@ function Nav() {
 
   return (
     <>
-      <nav className={`fixed inset-x-0 top-0 z-50 flex items-center justify-between px-8 md:px-16 transition-all duration-500
-        ${scrolled ? 'py-4 bg-paper/97 backdrop-blur-md border-b border-ink/8 shadow-sm' : 'py-7'}`}>
+      <nav className={`fixed inset-x-0 top-0 z-50 flex items-center justify-between px-8 md:px-16 transition-all duration-500 backdrop-blur-md
+        ${scrolled ? 'py-4 bg-paper/90 border-b border-ink/8 shadow-sm' : 'py-7 bg-paper/40'}`}>
 
         <a href="#" className="font-sans text-lg font-black text-ink tracking-tight uppercase">
           Emily Flow
@@ -141,7 +141,7 @@ function Hero() {
 
       {/* Desktop: תמונה מלאה, טקסט ימין */}
       <div className="hidden md:flex relative min-h-screen">
-        <div className="absolute top-20 bottom-0 left-0 right-0">
+        <div className="absolute inset-0">
           <img src="/hero-bg.jpg" alt="Emily Flow"
             className="w-full h-full object-cover object-left animate-fade-in" />
           <div className="absolute inset-0 bg-gradient-to-l from-paper-warm/95 via-paper-warm/50 to-transparent" />
