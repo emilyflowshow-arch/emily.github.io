@@ -113,14 +113,14 @@ function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex overflow-hidden bg-paper-warm">
       {/* Photo */}
-      <div className="absolute inset-0 md:right-0 md:left-[45%]">
+      <div className="absolute inset-0 md:left-0 md:right-[45%]">
         <img src="/hero-bg.jpg" alt="Emily Flow"
           className="w-full h-full object-cover object-center animate-fade-in" />
-        <div className="absolute inset-0 bg-gradient-to-r from-paper-warm via-paper-warm/50 to-transparent md:via-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-l from-paper-warm via-paper-warm/50 to-transparent md:via-transparent" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-end pb-24 px-8 md:px-20 pt-36 max-w-3xl">
+      <div className="relative z-10 flex flex-col justify-end pb-24 px-8 md:px-20 pt-36 max-w-3xl md:mr-0 md:ml-auto">
         <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up"
           style={{ animationDelay: '0.1s' }}>
           ריקוד · אש · יוגה
