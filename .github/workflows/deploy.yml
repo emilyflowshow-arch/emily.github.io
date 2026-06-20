@@ -23,6 +23,8 @@ jobs:
 
       - run: npm run build
 
+      - run: cp -r assets dist/assets
+
       - run: cp dist/index.html dist/404.html
 
       - uses: actions/upload-pages-artifact@v3
