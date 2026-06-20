@@ -149,7 +149,7 @@ function Hero() {
           <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up">
             ריקוד · אש · יוגה
           </span>
-          <h1 className="font-sans font-black text-ink leading-[0.92] mb-10 animate-fade-up uppercase tracking-tight text-[clamp(4.5rem,12vw,10rem)]">
+          <h1 className="font-sans font-black text-ink leading-[0.92] mb-10 animate-fade-up uppercase tracking-tight text-[clamp(3.6rem,9.6vw,8rem)]">
             אמילי<br />פלואו
           </h1>
           <p className="text-ink/60 text-[16px] leading-[1.8] mb-12 max-w-md animate-fade-up font-light">
