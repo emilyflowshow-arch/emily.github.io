@@ -139,13 +139,14 @@ function Hero() {
         </div>
       </div>
 
-      {/* Desktop: תמונה מלאה, טקסט אוברליי מימין */}
-      <div className="hidden md:flex relative h-[88vh]">
-        <div className="absolute inset-0">
-          <img src="/hero-bg.jpg" alt="Emily Flow"
-            className="w-full h-full object-contain object-left-bottom animate-fade-in" />
-        </div>
-        <div className="relative z-10 flex flex-col justify-center px-16 pt-32 pb-6 max-w-xl ml-auto backdrop-blur-md bg-gradient-to-l from-paper/80 via-paper/50 to-transparent">
+      {/* Desktop: תמונה טבעית שמאלה, גרדיאנט מטשטש לימין */}
+      <div className="hidden md:flex relative h-[88vh] overflow-hidden">
+        {/* התמונה בגובה מלא, רוחב טבעי — רקדנית לא נחתכת */}
+        <img src="/hero-bg.jpg" alt="Emily Flow"
+          className="absolute top-0 left-0 h-full w-auto animate-fade-in" />
+        {/* גרדיאנט שמטשטש את קצה התמונה לתוך הרקע */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#dfc3aa]" style={{background: 'linear-gradient(to right, transparent 30%, #d4c8be 60%, #dfc3aa 100%)'}} />
+        <div className="relative z-10 flex flex-col justify-center px-16 pt-32 pb-6 max-w-xl ml-auto">
           <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up">
             ריקוד · אש · יוגה
           </span>
