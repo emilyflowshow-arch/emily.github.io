@@ -3,7 +3,7 @@ export const translations = {
     dir: 'rtl',
     nav: {
       henna: 'חינה',
-      services: 'שירותים',
+      services: 'מה אני מציעה',
       gallery: 'גלריה',
       about: 'אודות',
       cta: 'הזמיני עכשיו',
