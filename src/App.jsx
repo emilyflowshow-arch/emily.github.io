@@ -63,7 +63,8 @@ function Nav() {
         </ul>
 
         <div className="hidden md:flex items-center gap-4">
-          <a href="#contact"
+          <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
+            target="_blank" rel="noopener"
             className="px-7 py-3 bg-teal text-paper text-[12px] font-bold tracking-[2px] uppercase
               hover:bg-teal-dark transition-colors duration-300">
             הזמיני עכשיו
@@ -96,7 +97,8 @@ function Nav() {
           ))}
         </ul>
         <div className="px-8">
-          <a href="#contact" onClick={() => setOpen(false)}
+          <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
+            target="_blank" rel="noopener" onClick={() => setOpen(false)}
             className="block w-full text-center py-4 bg-teal text-paper text-sm font-bold tracking-widest uppercase">
             הזמיני עכשיו
           </a>
@@ -138,7 +140,8 @@ function Hero() {
         </p>
 
         <div className="flex items-center gap-5 flex-wrap animate-fade-up" style={{ animationDelay: '0.5s' }}>
-          <a href="#contact"
+          <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
+            target="_blank" rel="noopener"
             className="inline-block px-10 py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase
               hover:bg-teal-dark transition-colors duration-300">
             הזמיני עכשיו
@@ -229,7 +232,8 @@ function Henna() {
                 hover:bg-teal-dark transition-colors duration-300">
               קראי עוד
             </Link>
-            <a href="#contact"
+            <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
+              target="_blank" rel="noopener"
               className="inline-block px-10 py-4 border-2 border-ink text-ink text-[12px] font-bold tracking-[3px] uppercase
                 hover:bg-ink hover:text-paper transition-all duration-300">
               הזמיני עכשיו
@@ -297,7 +301,8 @@ function Services() {
               שירותים
             </h2>
           </div>
-          <a href="#contact"
+          <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
+            target="_blank" rel="noopener"
             className="self-start md:self-auto px-8 py-3 border-2 border-ink text-ink text-[12px] font-bold tracking-[2px] uppercase
               hover:bg-ink hover:text-paper transition-all duration-300">
             לפרטים ותיאום
@@ -372,7 +377,8 @@ function About() {
             </p>
           </div>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#contact"
+            <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
+              target="_blank" rel="noopener"
               className="px-9 py-4 bg-ink text-paper text-[12px] font-bold tracking-[3px] uppercase
                 hover:bg-ink-soft transition-colors duration-300">
               צרי קשר
@@ -517,11 +523,6 @@ function Contact() {
                 className="block w-full text-center py-4 bg-[#25D366] text-paper text-[12px] font-bold tracking-[3px] uppercase
                   hover:bg-[#1ebe5d] transition-colors duration-300">
                 וואטסאפ — שלחי הודעה
-              </a>
-              <a href="mailto:emilyrich1187@gmail.com"
-                className="block w-full text-center py-4 bg-paper text-ink text-[12px] font-bold tracking-[3px] uppercase
-                  hover:bg-paper-warm transition-colors duration-300 mt-3">
-                שלחו מייל
               </a>
             </div>
 
