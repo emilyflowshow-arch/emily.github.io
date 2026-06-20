@@ -30,7 +30,7 @@ export default function HennaPage() {
             </Link>
             <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-3 block">מוצר דגל</span>
             <h1 className="font-sans font-black text-ink uppercase tracking-tight leading-[0.95] mb-4 text-[clamp(2.5rem,6vw,5rem)]">
-              רקדנית בטן לחינה
+              אמילי פלואו<br />רקדנית בטן לחינה
             </h1>
             <p className="text-ink/60 text-[16px] leading-[1.8] max-w-2xl font-light">
               חינה אחת. רגע אחד שכולן יזכרו.
