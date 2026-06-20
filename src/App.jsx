@@ -145,7 +145,7 @@ function Hero() {
           <img src="/hero-bg.jpg" alt="Emily Flow"
             className="w-full h-full object-contain object-left-bottom animate-fade-in" />
         </div>
-        <div className="relative z-10 flex flex-col justify-center px-16 pt-24 pb-6 max-w-xl ml-auto backdrop-blur-md bg-gradient-to-l from-paper/80 via-paper/50 to-transparent">
+        <div className="relative z-10 flex flex-col justify-center px-16 pt-32 pb-6 max-w-xl ml-auto backdrop-blur-md bg-gradient-to-l from-paper/80 via-paper/50 to-transparent">
           <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up">
             ריקוד · אש · יוגה
           </span>
