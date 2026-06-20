@@ -114,7 +114,7 @@ function Hero() {
     <section id="home" className="relative min-h-screen flex overflow-hidden bg-paper-warm">
       {/* Photo */}
       <div className="absolute inset-0 md:right-0 md:left-[45%]">
-        <img src="assets/hero-bg.jpg" alt="Emily Flow"
+        <img src="/hero-bg.jpg" alt="Emily Flow"
           className="w-full h-full object-cover object-center animate-fade-in" />
         <div className="absolute inset-0 bg-gradient-to-r from-paper-warm via-paper-warm/50 to-transparent md:via-transparent" />
       </div>
@@ -244,7 +244,7 @@ function Henna() {
         {/* Image */}
         <div ref={imgRef} className={`reveal ${imgVisible ? 'visible' : ''} relative`}>
           <div className="absolute -top-3 -left-3 w-full h-full border-2 border-teal/40" />
-          <img src="assets/gallery-1.jpg" alt="ריקוד בטן לחינה — אמילי פלואו"
+          <img src="/gallery-1.jpg" alt="ריקוד בטן לחינה — אמילי פלואו"
             className="relative z-10 w-full object-cover shadow-2xl" />
         </div>
 
@@ -355,7 +355,7 @@ function About() {
         {/* Image */}
         <div ref={imgRef} className={`reveal order-2 md:order-1 relative ${imgVisible ? 'visible' : ''}`}>
           <div className="absolute -top-3 -right-3 w-full h-full border-2 border-ink/20" />
-          <img src="assets/contact-photo.jpg" alt="אמילי פלואו"
+          <img src="/contact-photo.jpg" alt="אמילי פלואו"
             className="relative z-10 w-full object-cover shadow-2xl" />
         </div>
 
@@ -400,12 +400,12 @@ function About() {
 
 /* ── Gallery ─────────────────────────────────────────────── */
 const GALLERY = [
-  { src: 'assets/gallery-1.jpg', label: 'ריקודי בטן',               span: 'row-span-2' },
-  { src: 'assets/gallery-2.jpg', label: 'אמילי פלואו',             span: '' },
-  { src: 'assets/gallery-3.jpg', label: 'Free Earth Festival',     span: '' },
-  { src: 'assets/gallery-4.jpg', label: 'פרפורמנס אש',             span: '' },
-  { src: 'assets/gallery-5.jpg', label: "סדנאת ריקוד טרייבל פיוז'ן", span: '' },
-  { src: 'assets/gallery-6.jpg', label: 'סדנאת חיבור לעצמי',      span: '' },
+  { src: '/gallery-1.jpg', label: 'ריקודי בטן',               span: 'row-span-2' },
+  { src: '/gallery-2.jpg', label: 'אמילי פלואו',             span: '' },
+  { src: '/gallery-3.jpg', label: 'Free Earth Festival',     span: '' },
+  { src: '/gallery-4.jpg', label: 'פרפורמנס אש',             span: '' },
+  { src: '/gallery-5.jpg', label: "סדנאת ריקוד טרייבל פיוז'ן", span: '' },
+  { src: '/gallery-6.jpg', label: 'סדנאת חיבור לעצמי',      span: '' },
 ]
 
 function Gallery() {
