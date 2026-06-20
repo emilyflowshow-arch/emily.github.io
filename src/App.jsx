@@ -278,11 +278,8 @@ function Services() {
       <div className="max-w-6xl mx-auto">
         <div ref={titleRef} className={`reveal mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6 ${titleVisible ? 'visible' : ''}`}>
           <div>
-            <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-4 block">
-              {t.services.badge}
-            </span>
             <h2 className="font-sans font-black text-ink uppercase tracking-tight text-display-lg">
-              {t.services.title}
+              {t.services.badge}
             </h2>
           </div>
           <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
