@@ -140,12 +140,12 @@ function Hero() {
       </div>
 
       {/* Desktop: תמונה שמאל, טקסט ימין */}
-      <div className="hidden md:grid md:grid-cols-2 min-h-screen">
-        <div className="relative">
+      <div className="hidden md:flex relative min-h-screen">
+        <div className="absolute inset-0 left-0 right-[45%]">
           <img src="/hero-bg.jpg" alt="Emily Flow"
             className="w-full h-full object-cover object-center animate-fade-in" />
         </div>
-        <div className="flex flex-col justify-end pb-24 px-16 pt-36 bg-paper-warm">
+        <div className="relative z-10 flex flex-col justify-end pb-6 px-20 pt-36 max-w-3xl ml-auto">
           <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up">
             ריקוד · אש · יוגה
           </span>
