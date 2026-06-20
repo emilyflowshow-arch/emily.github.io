@@ -362,9 +362,12 @@ function About() {
         {/* Text */}
         <div ref={ref} className={`reveal order-1 md:order-2 ${visible ? 'visible' : ''}`}>
           <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-6 block">אודות</span>
-          <h2 className="font-sans font-black text-ink uppercase tracking-tight text-display-md mb-8">
+          <h2 className="font-sans font-black text-ink uppercase tracking-tight text-display-md mb-4">
             היי,<br />אני אמילי
           </h2>
+          <p className="text-teal font-semibold text-[15px] tracking-wide mb-8">
+            אמנית פרפורמנס שמלמדת נוכחות דרך תנועה
+          </p>
           <div className="space-y-5 text-ink/65 text-[15px] leading-[1.9] font-light">
             <p>
               רקדנית בטן טרייבל פיוז׳ן, פרפורמרית אש, מורה ליוגה ומנחת מדיטציה —
