@@ -111,7 +111,7 @@ function Nav() {
 /* ── Hero ────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section id="home" className="bg-paper-warm overflow-hidden">
+    <section id="home" className="overflow-hidden" style={{background: 'linear-gradient(to bottom, #b6bdeb 0%, #dfc3aa 100%)'}}>
 
       {/* Mobile: תמונה למעלה, טקסט למטה */}
       <div className="md:hidden">
@@ -143,7 +143,7 @@ function Hero() {
       <div className="hidden md:flex relative min-h-screen">
         <div className="absolute inset-0">
           <img src="/hero-bg.jpg" alt="Emily Flow"
-            className="w-full h-full object-contain object-left animate-fade-in" />
+            className="w-full h-full object-contain object-left-bottom animate-fade-in" />
         </div>
         <div className="relative z-10 flex flex-col justify-center px-16 pt-24 pb-6 max-w-xl ml-auto backdrop-blur-md bg-gradient-to-l from-paper/80 via-paper/50 to-transparent">
           <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up">
