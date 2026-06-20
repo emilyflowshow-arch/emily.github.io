@@ -141,10 +141,9 @@ function Hero() {
 
       {/* Desktop: תמונה מלאה, טקסט ימין */}
       <div className="hidden md:flex relative min-h-screen">
-        <div className="absolute inset-0">
+        <div className="absolute top-20 bottom-0 left-0 w-[60%]">
           <img src="/hero-bg.jpg" alt="Emily Flow"
-            className="w-full h-full object-cover object-left animate-fade-in" />
-          <div className="absolute inset-0 bg-gradient-to-l from-paper-warm/70 via-transparent to-transparent" />
+            className="w-full h-full object-cover object-left-top animate-fade-in" />
         </div>
         <div className="relative z-10 flex flex-col justify-end pb-6 px-20 pt-36 max-w-2xl ml-auto">
           <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up">
