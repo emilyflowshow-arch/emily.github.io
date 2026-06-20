@@ -185,9 +185,10 @@ function Marquee() {
 const SERVICES = [
   {
     num: '01',
-    title: "ריקוד בטן טרייבל פיוז'ן",
-    subtitle: 'הופעות ושיעורים',
-    desc: "חיבור לגוף דרך ריקוד טרייבל פיוז'ן. תנועות ושרירים שלא היינו מודעים אליהם, תוך ריקוד משחרר, מחזק ומהפנט.",
+    title: "ריקוד בטן לחינה",
+    subtitle: "מוצר הדגל · טרייבל פיוז'ן להופעות ושיעורים",
+    desc: "הופעת ריקוד בטן לחינה היא אחד הרגעים הכי קסומים בערב — רקדנית בטן שמביאה אנרגיה, צבע ושמחה לחגיגה שלכן. אני מתמחה בריקוד בטן טרייבל פיוז׳ן לאירועי חינה: הופעה אישית ומרגשת שמותאמת לאווירה, למוזיקה ולכלה. מחפשות רקדנית בטן לחינה? אני כאן.",
+    featured: true,
   },
   {
     num: '02',
@@ -240,14 +241,19 @@ function Services() {
   )
 }
 
-function ServiceRow({ num, title, subtitle, desc, delay }) {
+function ServiceRow({ num, title, subtitle, desc, delay, featured }) {
   const [ref, visible] = useReveal(delay)
   return (
     <div ref={ref}
-      className={`reveal service-card group flex items-start gap-6 md:gap-12 py-10 px-4 border-b border-ink/10 cursor-default ${visible ? 'visible' : ''}`}>
+      className={`reveal service-card group flex items-start gap-6 md:gap-12 py-10 px-4 border-b border-ink/10 cursor-default ${visible ? 'visible' : ''} ${featured ? 'bg-paper-warm' : ''}`}>
       <span className="font-sans text-sm text-muted font-bold leading-none mt-1 shrink-0 select-none">{num}</span>
       <div className="flex flex-col md:flex-row md:items-center md:gap-12 flex-1">
         <div className="md:w-72 shrink-0 mb-3 md:mb-0">
+          {featured && (
+            <span className="inline-block mb-2 px-3 py-1 bg-teal text-paper text-[10px] font-bold tracking-[2px] uppercase">
+              ✦ מוצר דגל
+            </span>
+          )}
           <h3 className="font-sans font-black text-ink text-xl leading-tight mb-1 uppercase">{title}</h3>
           <span className="text-muted text-[12px] font-semibold tracking-wider uppercase">{subtitle}</span>
         </div>
