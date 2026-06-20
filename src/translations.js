@@ -15,6 +15,35 @@ export const translations = {
       cta: 'הזמיני עכשיו',
       scroll: 'גלי עוד',
     },
+    henna: {
+      badge: 'מוצר דגל',
+      title: 'ריקודי בטן\nלחינה',
+      p1bold: 'חינה אחת. רגע אחד שכולן יזכרו.',
+      p1: 'רקדנית בטן שיודעת לקרוא את הקהל, להרים את האנרגיה בדיוק ברגע הנכון — ולגרום לכלה להרגיש מלכה. אני מגיעה מוכנה, מקצועית ועם הלב פתוח, ומותאמת את ההופעה לאופי החינה שלכן — למוזיקה ולאווירה.',
+      p2: 'כי חינה טובה לא תלויה רק בקישוטים — היא תלויה באנרגיה שמביאים לחדר.',
+      p3bold: 'מעוניינות? השאירי פרטים ואחזור אליכן בהקדם.',
+      tags: ['חינה מרוקאית', 'חינה תימנית', 'חינה מזרחית', 'כל סגנון'],
+      readMore: 'קראי עוד',
+      book: 'הזמיני עכשיו',
+    },
+    services: {
+      badge: 'מה אני מציעה',
+      title: 'שירותים',
+      cta: 'לפרטים ותיאום',
+      featuredLabel: 'מוצר דגל',
+      items: [
+        { num: '01', title: 'ריקודי בטן לחינה', subtitle: 'מוצר דגל', desc: 'אמילי פלואו — רקדנית בטן שמביאה אנרגיה, צבע ושמחה לחגיגה שלכן. הופעת ריקודי בטן לחינה היא אחד הרגעים הכי קסומים בערב. אני מתמחה בריקוד בטן טרייבל לאירועי חינה: הופעה מלאת אנרגיה ושמחה שמותאמת לאווירה, למוזיקה ולכלה. מחפשות רקדנית בטן לחינה? אני כאן.' },
+        { num: '02', title: "ריקודי בטן טרייבל פיוז'ן", subtitle: 'הופעות, שיעורים וסדנאות', desc: "חיבור לגוף דרך ריקוד טרייבל פיוז'ן. תנועות ושרירים שלא היינו מודעים אליהם, תוך ריקוד משחרר, מחזק ומהפנט." },
+        { num: '03', title: 'הופעות אש ופלואו', subtitle: 'גאגלינג פלואו', desc: 'פרפורמנס אש ייחודי לכל אירוע — חתונות, בר מצווה, חינה, פסטיבלים, מסעדות שף ואירועים קורפורטיביים.' },
+        { num: '04', title: 'יוגה אשטנגה ויניאסה', subtitle: 'שיעורים וסדנאות', desc: 'יוגה כדרך חיים. החיבור של התנועה והנשימה, המודעות והנוכחות לרגע הזה — כאן ועכשיו.' },
+        { num: '05', title: 'סדנאת ״חיבור לעצמי״', subtitle: 'מדיטציה ומיינדפולנס', desc: 'כלים ושיטות להתחבר לכאן ועכשיו. תרגילי נשימה, מדיטציה ו-Emotional Release — בדרך לחיים מודעים יותר.' },
+      ],
+    },
+    gallery: {
+      badge: 'רגעים',
+      title: 'גלריה',
+      items: ['ריקודי בטן', 'אמילי פלואו', 'Free Earth Festival', 'פרפורמנס אש', "סדנאת ריקוד טרייבל פיוז'ן", 'סדנאת חיבור לעצמי'],
+    },
     about: {
       label: 'אודות',
       title: 'היי,\nאני אמילי',
@@ -33,8 +62,11 @@ export const translations = {
       desc: 'מעוניינת בהופעה, שיעור או סדנה? שלחי הודעה ואחזור אליך בהקדם.',
       cta: 'וואטסאפ — שלחי הודעה',
       or: 'או כתבי ל',
+      eventTags: ['חתונות', 'בר מצווה', 'חינה', 'פסטיבלים', 'מסעדות שף', 'אירועים קורפורטיביים'],
     },
+    marquee: ['ריקודי בטן', "טרייבל פיוז'ן", 'הופעות אש', 'יוגה אשטנגה', 'מדיטציה ומיינדפולנס', 'גאגלינג פלואו', 'סדנת חיבור לעצמי'],
   },
+
   en: {
     dir: 'ltr',
     nav: {
@@ -50,6 +82,35 @@ export const translations = {
       desc: 'Tribal Fusion Belly Dancer & Flow/Fire Performer · Ashtanga & Vinyasa Yoga Teacher · Meditation & Mindfulness Facilitator · "Connect to Yourself" Workshop Guide',
       cta: 'Book Now',
       scroll: 'Scroll down',
+    },
+    henna: {
+      badge: 'Signature Service',
+      title: 'Belly Dance\nfor Henna',
+      p1bold: 'One henna night. One moment they\'ll all remember.',
+      p1: 'A belly dancer who knows how to read the crowd, lift the energy at exactly the right moment — and make the bride feel like a queen. I arrive prepared, professional and open-hearted, adapting the performance to the vibe of your henna — the music and the atmosphere.',
+      p2: 'Because a great henna night isn\'t just about decorations — it\'s about the energy you bring into the room.',
+      p3bold: 'Interested? Leave your details and I\'ll get back to you soon.',
+      tags: ['Moroccan Henna', 'Yemenite Henna', 'Middle Eastern', 'Any Style'],
+      readMore: 'Read More',
+      book: 'Book Now',
+    },
+    services: {
+      badge: 'What I offer',
+      title: 'Services',
+      cta: 'Get in touch',
+      featuredLabel: 'Signature',
+      items: [
+        { num: '01', title: 'Belly Dance for Henna', subtitle: 'Signature Service', desc: 'Emily Flow — a belly dancer who brings energy, color and joy to your celebration. A belly dance performance at a henna night is one of the most magical moments of the evening. I specialize in tribal belly dance for henna events: an energetic performance tailored to the vibe, music and bride.' },
+        { num: '02', title: 'Tribal Fusion Belly Dance', subtitle: 'Performances, Classes & Workshops', desc: 'Connect to your body through tribal fusion belly dance. Movements and muscles you never knew you had, through a liberating, strengthening and mesmerizing dance.' },
+        { num: '03', title: 'Fire & Flow Performances', subtitle: 'Flow Arts & Juggling', desc: 'Unique fire performance for any event — weddings, bar mitzvahs, henna nights, festivals, chef restaurants and corporate events.' },
+        { num: '04', title: 'Ashtanga & Vinyasa Yoga', subtitle: 'Classes & Workshops', desc: 'Yoga as a way of life. The connection of movement and breath, awareness and presence to this moment — here and now.' },
+        { num: '05', title: '"Connect to Yourself" Workshop', subtitle: 'Meditation & Mindfulness', desc: 'Tools and methods to connect to the here and now. Breathing exercises, meditation and Emotional Release — on the path to a more conscious life.' },
+      ],
+    },
+    gallery: {
+      badge: 'Moments',
+      title: 'Gallery',
+      items: ['Belly Dance', 'Emily Flow', 'Free Earth Festival', 'Fire Performance', 'Tribal Fusion Workshop', 'Connect to Yourself Workshop'],
     },
     about: {
       label: 'About',
@@ -69,8 +130,11 @@ export const translations = {
       desc: 'Interested in a performance, class or workshop? Send a message and I\'ll get back to you soon.',
       cta: 'WhatsApp — Send a Message',
       or: 'or email',
+      eventTags: ['Weddings', 'Bar Mitzvah', 'Henna', 'Festivals', 'Chef Restaurants', 'Corporate Events'],
     },
+    marquee: ['Belly Dance', 'Tribal Fusion', 'Fire Performances', 'Ashtanga Yoga', 'Meditation & Mindfulness', 'Flow Juggling', 'Connect to Yourself Workshop'],
   },
+
   ar: {
     dir: 'rtl',
     nav: {
@@ -86,6 +150,35 @@ export const translations = {
       desc: 'راقصة بطن قبلية وفنانة نار وتدفق · مدرّسة يوغا أشتانغا وفينياسا · مُيسّرة تأمل ومايندفولنس · مدرّبة ورشة "التواصل مع الذات"',
       cta: 'احجزي الآن',
       scroll: 'اكتشفي المزيد',
+    },
+    henna: {
+      badge: 'الخدمة المميزة',
+      title: 'رقص البطن\nللحنة',
+      p1bold: 'حنة واحدة. لحظة لن تنساها أيٌّ منكن.',
+      p1: 'راقصة بطن تعرف كيف تقرأ الجمهور، وترفع الأجواء في اللحظة المناسبة تمامًا — وتجعل العروس تشعر بأنها ملكة. أصل مستعدة، محترفة وبقلب مفتوح، وأكيّف العرض مع طابع حفلة الحنة الخاصة بكن.',
+      p2: 'لأن حفل الحنة الرائع لا يعتمد فقط على الزينة — بل على الطاقة التي تُدخلونها إلى الغرفة.',
+      p3bold: 'مهتمة؟ اتركي تفاصيلك وسأتواصل معكِ قريبًا.',
+      tags: ['حنة مغربية', 'حنة يمنية', 'حنة شرقية', 'أي أسلوب'],
+      readMore: 'اقرئي المزيد',
+      book: 'احجزي الآن',
+    },
+    services: {
+      badge: 'ما أقدمه',
+      title: 'الخدمات',
+      cta: 'تواصلي معنا',
+      featuredLabel: 'مميز',
+      items: [
+        { num: '01', title: 'رقص البطن للحنة', subtitle: 'الخدمة المميزة', desc: 'إيميلي فلو — راقصة بطن تجلب الطاقة والألوان والفرح لاحتفالكن. عرض رقص البطن في حفل الحنة هو أحد أكثر اللحظات سحرًا في الأمسية.' },
+        { num: '02', title: 'رقص البطن القبلي', subtitle: 'عروض وحصص وورش', desc: 'تواصلي مع جسدك من خلال رقص البطن القبلي. حركات وعضلات لم تكوني تدركينها، من خلال رقص محرر ومقوٍّ وساحر.' },
+        { num: '03', title: 'عروض النار والتدفق', subtitle: 'فنون التدفق والجاغلينغ', desc: 'عرض نار فريد لكل مناسبة — أعراس، بار ميتسفا، حنة، مهرجانات، مطاعم وفعاليات.' },
+        { num: '04', title: 'يوغا أشتانغا وفينياسا', subtitle: 'حصص وورش', desc: 'اليوغا كأسلوب حياة. الربط بين الحركة والتنفس، الوعي والحضور في هذه اللحظة — هنا والآن.' },
+        { num: '05', title: 'ورشة "التواصل مع الذات"', subtitle: 'تأمل ومايندفولنس', desc: 'أدوات وأساليب للتواصل مع هنا والآن. تمارين تنفس وتأمل وإطلاق عاطفي — في طريق نحو حياة أكثر وعيًا.' },
+      ],
+    },
+    gallery: {
+      badge: 'لحظات',
+      title: 'معرض',
+      items: ['رقص البطن', 'إيميلي فلو', 'Free Earth Festival', 'عرض النار', 'ورشة رقص قبلي', 'ورشة التواصل مع الذات'],
     },
     about: {
       label: 'عني',
@@ -105,8 +198,11 @@ export const translations = {
       desc: 'مهتمة بعرض أو درس أو ورشة؟ أرسلي رسالة وسأتواصل معك قريباً.',
       cta: 'واتساب — أرسلي رسالة',
       or: 'أو راسليني على',
+      eventTags: ['أعراس', 'بار ميتسفا', 'حنة', 'مهرجانات', 'مطاعم فاخرة', 'فعاليات شركات'],
     },
+    marquee: ['رقص البطن', 'رقص قبلي', 'عروض النار', 'يوغا أشتانغا', 'تأمل ومايندفولنس', 'جاغلينغ تدفق', 'ورشة التواصل مع الذات'],
   },
+
   ru: {
     dir: 'ltr',
     nav: {
@@ -122,6 +218,35 @@ export const translations = {
       desc: 'Танцовщица живота в стиле Tribal Fusion и огненная артистка · Преподаватель йоги Аштанга и Виньяса · Ведущая медитации и майндфулнес · Тренер мастерской "Связь с собой"',
       cta: 'Забронировать',
       scroll: 'Листайте вниз',
+    },
+    henna: {
+      badge: 'Флагманская услуга',
+      title: 'Танец живота\nна вечер хны',
+      p1bold: 'Один вечер хны. Один момент, который все запомнят.',
+      p1: 'Танцовщица живота, которая умеет чувствовать публику, поднять энергию в нужный момент — и заставить невесту почувствовать себя королевой. Я прихожу подготовленной, профессиональной и с открытым сердцем, адаптируя выступление к атмосфере вашего вечера хны.',
+      p2: 'Потому что отличный вечер хны зависит не только от украшений — он зависит от энергии, которую вы вносите в комнату.',
+      p3bold: 'Интересно? Оставьте данные, и я свяжусь с вами в ближайшее время.',
+      tags: ['Марокканская хна', 'Йеменская хна', 'Восточная хна', 'Любой стиль'],
+      readMore: 'Читать далее',
+      book: 'Забронировать',
+    },
+    services: {
+      badge: 'Что я предлагаю',
+      title: 'Услуги',
+      cta: 'Связаться',
+      featuredLabel: 'Флагман',
+      items: [
+        { num: '01', title: 'Танец живота на хну', subtitle: 'Флагманская услуга', desc: 'Эмили Флоу — танцовщица живота, которая приносит энергию, краски и радость на ваш праздник. Выступление с танцем живота на вечере хны — один из самых волшебных моментов вечера.' },
+        { num: '02', title: 'Tribal Fusion Танец живота', subtitle: 'Выступления, уроки и мастер-классы', desc: 'Связь с телом через Tribal Fusion. Движения и мышцы, о которых вы не знали, через освобождающий, укрепляющий и завораживающий танец.' },
+        { num: '03', title: 'Огненные и Flow выступления', subtitle: 'Flow Arts & жонглирование', desc: 'Уникальное огненное шоу для любого мероприятия — свадьбы, бар-мицвы, вечера хны, фестивали, рестораны и корпоративные события.' },
+        { num: '04', title: 'Йога Аштанга и Виньяса', subtitle: 'Уроки и мастер-классы', desc: 'Йога как образ жизни. Связь движения и дыхания, осознанности и присутствия в этом моменте — здесь и сейчас.' },
+        { num: '05', title: 'Мастерская "Связь с собой"', subtitle: 'Медитация и майндфулнес', desc: 'Инструменты и методы для связи с настоящим моментом. Дыхательные упражнения, медитация и Emotional Release — на пути к более осознанной жизни.' },
+      ],
+    },
+    gallery: {
+      badge: 'Моменты',
+      title: 'Галерея',
+      items: ['Танец живота', 'Эмили Флоу', 'Free Earth Festival', 'Огненное шоу', 'Мастерская Tribal Fusion', 'Мастерская "Связь с собой"'],
     },
     about: {
       label: 'Обо мне',
@@ -141,6 +266,8 @@ export const translations = {
       desc: 'Хотите заказать выступление, урок или мастер-класс? Напишите мне, и я отвечу вам в ближайшее время.',
       cta: 'WhatsApp — Написать',
       or: 'или напишите на',
+      eventTags: ['Свадьбы', 'Бар-мицва', 'Хна', 'Фестивали', 'Рестораны', 'Корпоративные мероприятия'],
     },
+    marquee: ['Танец живота', 'Tribal Fusion', 'Огненные шоу', 'Йога Аштанга', 'Медитация и майндфулнес', 'Flow жонглирование', 'Мастерская "Связь с собой"'],
   },
 }

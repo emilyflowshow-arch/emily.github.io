@@ -121,7 +121,7 @@ function Nav() {
           <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
             target="_blank" rel="noopener" onClick={() => setOpen(false)}
             className="block w-full text-center py-4 bg-teal text-paper text-sm font-bold tracking-widest uppercase">
-            הזמיני עכשיו
+            {t.nav.cta}
           </a>
         </div>
       </div>
@@ -195,20 +195,15 @@ function Hero() {
 }
 
 /* ── Marquee strip ───────────────────────────────────────── */
-const MARQUEE_ITEMS = [
-  'ריקודי בטן', 'טרייבל פיוז׳ן', 'הופעות אש', 'יוגה אשטנגה',
-  'מדיטציה ומיינדפולנס', 'גאגלינג פלואו', 'סדנת חיבור לעצמי',
-  'ריקודי בטן', 'טרייבל פיוז׳ן', 'הופעות אש', 'יוגה אשטנגה',
-  'מדיטציה ומיינדפולנס', 'גאגלינג פלואו', 'סדנת חיבור לעצמי',
-]
-
 function Marquee() {
+  const { t } = useContext(LangContext)
+  const items = [...t.marquee, ...t.marquee]
   return (
     <div className="overflow-hidden border-y border-ink/10 py-4 bg-ink" style={{ direction: 'ltr' }}>
       <div className="marquee-track whitespace-nowrap">
-        {MARQUEE_ITEMS.map((t, i) => (
+        {items.map((item, i) => (
           <span key={i} className="inline-block px-8 text-paper text-[13px] font-bold tracking-[3px] uppercase">
-            {t}
+            {item}
             <span className="ml-8 text-accent">✦</span>
           </span>
         ))}
@@ -219,6 +214,7 @@ function Marquee() {
 
 /* ── Henna ───────────────────────────────────────────────── */
 function Henna() {
+  const { t } = useContext(LangContext)
   const [ref, visible] = useReveal()
   const [imgRef, imgVisible] = useReveal(150)
   return (
@@ -227,30 +223,19 @@ function Henna() {
 
         {/* Text */}
         <div ref={ref} className={`reveal ${visible ? 'visible' : ''}`}>
-          <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-4 block">מוצר דגל</span>
+          <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-4 block">{t.henna.badge}</span>
           <h2 className="font-sans font-black text-ink uppercase tracking-tight text-display-md mb-6">
-            ריקודי בטן<br />לחינה
+            {t.henna.title.split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
           </h2>
           <div className="space-y-5 text-ink/65 text-[15px] leading-[1.9] font-light">
-            <p>
-              <strong className="text-ink font-semibold">חינה אחת. רגע אחד שכולן יזכרו.</strong>
-            </p>
-            <p>
-              רקדנית בטן שיודעת לקרוא את הקהל, להרים את האנרגיה בדיוק ברגע הנכון —
-              ולגרום לכלה להרגיש מלכה. אני מגיעה מוכנה, מקצועית ועם הלב פתוח,
-              ומותאמת את ההופעה לאופי החינה שלכן — למוזיקה ולאווירה.
-            </p>
-            <p>
-              כי חינה טובה לא תלויה רק בקישוטים —
-              היא תלויה באנרגיה שמביאים לחדר.
-            </p>
-            <p>
-              <strong className="text-ink font-semibold">מעוניינות? השאירי פרטים ואחזור אליכן בהקדם.</strong>
-            </p>
+            <p><strong className="text-ink font-semibold">{t.henna.p1bold}</strong></p>
+            <p>{t.henna.p1}</p>
+            <p>{t.henna.p2}</p>
+            <p><strong className="text-ink font-semibold">{t.henna.p3bold}</strong></p>
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            {['חינה מרוקאית', 'חינה תימנית', 'חינה מזרחית', 'כל סגנון'].map(tag => (
+            {t.henna.tags.map(tag => (
               <span key={tag} className="px-4 py-2 border border-ink/20 text-ink/60 text-[11px] font-bold tracking-wider uppercase">
                 {tag}
               </span>
@@ -261,13 +246,13 @@ function Henna() {
             <Link to="/חינה"
               className="inline-block px-10 py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase
                 hover:bg-teal-dark transition-colors duration-300">
-              קראי עוד
+              {t.henna.readMore}
             </Link>
             <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
               target="_blank" rel="noopener"
               className="inline-block px-10 py-4 border-2 border-ink text-ink text-[12px] font-bold tracking-[3px] uppercase
                 hover:bg-ink hover:text-paper transition-all duration-300">
-              הזמיני עכשיו
+              {t.henna.book}
             </a>
           </div>
         </div>
@@ -285,40 +270,8 @@ function Henna() {
 }
 
 /* ── Services ────────────────────────────────────────────── */
-const SERVICES = [
-  {
-    num: '01',
-    title: "ריקודי בטן לחינה",
-    subtitle: 'מוצר דגל',
-    desc: "אמילי פלואו — רקדנית בטן שמביאה אנרגיה, צבע ושמחה לחגיגה שלכן. הופעת ריקודי בטן לחינה היא אחד הרגעים הכי קסומים בערב. אני מתמחה בריקוד בטן טרייבל לאירועי חינה: הופעה מלאת אנרגיה ושמחה שמותאמת לאווירה, למוזיקה ולכלה. מחפשות רקדנית בטן לחינה? אני כאן.",
-  },
-  {
-    num: '02',
-    title: "ריקודי בטן טרייבל פיוז'ן",
-    subtitle: 'הופעות, שיעורים וסדנאות',
-    desc: "חיבור לגוף דרך ריקוד טרייבל פיוז'ן. תנועות ושרירים שלא היינו מודעים אליהם, תוך ריקוד משחרר, מחזק ומהפנט.",
-  },
-  {
-    num: '03',
-    title: 'הופעות אש ופלואו',
-    subtitle: 'גאגלינג פלואו',
-    desc: 'פרפורמנס אש ייחודי לכל אירוע — חתונות, בר מצווה, חינה, פסטיבלים, מסעדות שף ואירועים קורפורטיביים.',
-  },
-  {
-    num: '04',
-    title: 'יוגה אשטנגה ויניאסה',
-    subtitle: 'שיעורים וסדנאות',
-    desc: 'יוגה כדרך חיים. החיבור של התנועה והנשימה, המודעות והנוכחות לרגע הזה — כאן ועכשיו.',
-  },
-  {
-    num: '05',
-    title: 'סדנאת ״חיבור לעצמי״',
-    subtitle: 'מדיטציה ומיינדפולנס',
-    desc: 'כלים ושיטות להתחבר לכאן ועכשיו. תרגילי נשימה, מדיטציה ו-Emotional Release — בדרך לחיים מודעים יותר.',
-  },
-]
-
 function Services() {
+  const { t } = useContext(LangContext)
   const [titleRef, titleVisible] = useReveal()
   return (
     <section id="services" className="py-28 px-8 md:px-20 bg-paper">
@@ -326,23 +279,23 @@ function Services() {
         <div ref={titleRef} className={`reveal mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6 ${titleVisible ? 'visible' : ''}`}>
           <div>
             <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-4 block">
-              מה אני מציעה
+              {t.services.badge}
             </span>
             <h2 className="font-sans font-black text-ink uppercase tracking-tight text-display-lg">
-              שירותים
+              {t.services.title}
             </h2>
           </div>
           <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
             target="_blank" rel="noopener"
             className="self-start md:self-auto px-8 py-3 border-2 border-ink text-ink text-[12px] font-bold tracking-[2px] uppercase
               hover:bg-ink hover:text-paper transition-all duration-300">
-            לפרטים ותיאום
+            {t.services.cta}
           </a>
         </div>
 
         <div className="border-t border-ink/10">
-          {SERVICES.map((s, i) => (
-            <ServiceRow key={i} {...s} delay={i * 100} />
+          {t.services.items.map((s, i) => (
+            <ServiceRow key={i} {...s} delay={i * 100} featuredLabel={t.services.featuredLabel} />
           ))}
         </div>
       </div>
@@ -350,7 +303,7 @@ function Services() {
   )
 }
 
-function ServiceRow({ num, title, subtitle, desc, delay, featured }) {
+function ServiceRow({ num, title, subtitle, desc, delay, featured, featuredLabel }) {
   const [ref, visible] = useReveal(delay)
   return (
     <div ref={ref}
@@ -360,7 +313,7 @@ function ServiceRow({ num, title, subtitle, desc, delay, featured }) {
         <div className="md:w-72 shrink-0 mb-3 md:mb-0">
           {featured && (
             <span className="inline-block mb-2 px-3 py-1 bg-teal text-paper text-[10px] font-bold tracking-[2px] uppercase">
-              ✦ מוצר דגל
+              ✦ {featuredLabel}
             </span>
           )}
           <h3 className="font-sans font-black text-ink text-xl leading-tight mb-1 uppercase">{title}</h3>
@@ -434,32 +387,33 @@ function About() {
 }
 
 /* ── Gallery ─────────────────────────────────────────────── */
-const GALLERY = [
-  { src: '/gallery-1.jpg', label: 'ריקודי בטן',               span: 'row-span-2' },
-  { src: '/gallery-2.jpg', label: 'אמילי פלואו',             span: '' },
-  { src: '/gallery-3.jpg', label: 'Free Earth Festival',     span: '' },
-  { src: '/gallery-4.jpg', label: 'פרפורמנס אש',             span: '' },
-  { src: '/gallery-5.jpg', label: "סדנאת ריקוד טרייבל פיוז'ן", span: '' },
-  { src: '/gallery-6.jpg', label: 'סדנאת חיבור לעצמי',      span: '' },
+const GALLERY_SRCS = [
+  { src: '/gallery-1.jpg', span: 'row-span-2' },
+  { src: '/gallery-2.jpg', span: '' },
+  { src: '/gallery-3.jpg', span: '' },
+  { src: '/gallery-4.jpg', span: '' },
+  { src: '/gallery-5.jpg', span: '' },
+  { src: '/gallery-6.jpg', span: '' },
 ]
 
 function Gallery() {
+  const { t } = useContext(LangContext)
   const [titleRef, titleVisible] = useReveal()
   return (
     <section id="gallery" className="py-28 px-8 md:px-20 bg-paper">
       <div className="max-w-6xl mx-auto">
         <div ref={titleRef} className={`reveal mb-14 ${titleVisible ? 'visible' : ''}`}>
           <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-4 block">
-            רגעים
+            {t.gallery.badge}
           </span>
           <h2 className="font-sans font-black text-ink uppercase tracking-tight text-display-lg">
-            גלריה
+            {t.gallery.title}
           </h2>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2" style={{ gridAutoRows: '240px' }}>
-          {GALLERY.map((g, i) => (
-            <GalleryItem key={i} {...g} delay={i * 70} />
+          {GALLERY_SRCS.map((g, i) => (
+            <GalleryItem key={i} src={g.src} span={g.span} label={t.gallery.items[i]} delay={i * 70} />
           ))}
         </div>
       </div>
@@ -565,7 +519,7 @@ function Contact() {
             </div>
 
             <div className="mt-8 flex gap-3 flex-wrap">
-              {['חתונות', 'בר מצווה', 'חינה', 'פסטיבלים', 'מסעדות שף', 'אירועים קורפורטיביים'].map(tag => (
+              {t.contact.eventTags.map(tag => (
                 <span key={tag} className="px-4 py-2 border border-paper/15 text-paper/50 text-[11px] font-bold tracking-wider uppercase">
                   {tag}
                 </span>
