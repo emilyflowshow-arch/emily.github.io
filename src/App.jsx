@@ -144,7 +144,7 @@ function Hero() {
         {/* התמונה בגובה מלא, רוחב טבעי — נמסה לשקיפות מימין */}
         <img src="/hero-bg.jpg" alt="Emily Flow"
           className="absolute top-0 left-0 h-full w-auto animate-fade-in"
-          style={{WebkitMaskImage: 'linear-gradient(to right, black 45%, transparent 78%)', maskImage: 'linear-gradient(to right, black 45%, transparent 78%)', transform: 'scale(1.25)', transformOrigin: 'left center'}} />
+          style={{WebkitMaskImage: 'linear-gradient(to right, black 55%, transparent 82%)', maskImage: 'linear-gradient(to right, black 55%, transparent 82%)', transform: 'scale(1.15)', transformOrigin: 'left center'}} />
         <div className="relative z-10 flex flex-col justify-center px-16 pt-32 pb-6 max-w-xl ml-auto">
           <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up">
             ריקוד · אש · יוגה
