@@ -129,7 +129,8 @@ function Hero() {
           <p className="text-ink/60 text-[15px] leading-[1.8] mb-8 font-light">
             רקדנית בטן טרייבל פיוז׳ן ופרפורמרית אש ·
             מורה ליוגה אשטנגה ויניאסה ·
-            מנחת סדנאת ״חיבור לעצמי״
+            מנחת מדיטציה ומיינדפולנס ·
+            מדריכת סדנאת ״חיבור לעצמי״
           </p>
           <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
             target="_blank" rel="noopener"
@@ -155,7 +156,8 @@ function Hero() {
           <p className="text-ink/80 text-[16px] leading-[1.8] mb-12 max-w-md animate-fade-up font-semibold">
             רקדנית בטן טרייבל פיוז׳ן ופרפורמרית אש ·
             מורה ליוגה אשטנגה ויניאסה ·
-            מנחת סדנאת ״חיבור לעצמי״
+            מנחת מדיטציה ומיינדפולנס ·
+            מדריכת סדנאת ״חיבור לעצמי״
           </p>
           <div className="flex items-center gap-5 flex-wrap animate-fade-up">
             <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
