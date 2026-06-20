@@ -34,6 +34,7 @@ function Nav() {
   }, [])
 
   const links = [
+    { label: 'חינה',    href: '#henna'    },
     { label: 'שירותים', href: '#services' },
     { label: 'גלריה',   href: '#gallery'  },
     { label: 'אודות',   href: '#about'    },
@@ -181,14 +182,69 @@ function Marquee() {
   )
 }
 
+/* ── Henna ───────────────────────────────────────────────── */
+function Henna() {
+  const [ref, visible] = useReveal()
+  const [imgRef, imgVisible] = useReveal(150)
+  return (
+    <section id="henna" className="py-28 px-8 md:px-20 bg-paper">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+
+        {/* Text */}
+        <div ref={ref} className={`reveal ${visible ? 'visible' : ''}`}>
+          <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-4 block">מוצר דגל</span>
+          <h2 className="font-sans font-black text-ink uppercase tracking-tight text-display-md mb-6">
+            ריקוד בטן<br />לחינה
+          </h2>
+          <div className="space-y-5 text-ink/65 text-[15px] leading-[1.9] font-light">
+            <p>
+              הופעת <strong className="text-ink font-semibold">ריקוד בטן לחינה</strong> היא אחד הרגעים הכי קסומים בערב —
+              רקדנית בטן שמביאה אנרגיה, צבע ושמחה לחגיגה שלכן.
+            </p>
+            <p>
+              אני מתמחה ב<strong className="text-ink font-semibold">ריקוד בטן טרייבל פיוז׳ן לאירועי חינה</strong>:
+              הופעה אישית ומרגשת שמותאמת לאווירה, למוזיקה ולכלה.
+              כל חינה מקבלת כוריאוגרפיה והתאמה מיוחדת — לא הופעה גנרית.
+            </p>
+            <p>
+              מחפשות <strong className="text-ink font-semibold">רקדנית בטן לחינה</strong>? אני כאן.
+            </p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            {['חינה מרוקאית', 'חינה תימנית', 'חינה מזרחית', 'כל סגנון'].map(tag => (
+              <span key={tag} className="px-4 py-2 border border-ink/20 text-ink/60 text-[11px] font-bold tracking-wider uppercase">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <a href="#contact"
+            className="mt-10 inline-block px-10 py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase
+              hover:bg-teal-dark transition-colors duration-300">
+            הזמיני עכשיו
+          </a>
+        </div>
+
+        {/* Image */}
+        <div ref={imgRef} className={`reveal ${imgVisible ? 'visible' : ''} relative`}>
+          <div className="absolute -top-3 -left-3 w-full h-full border-2 border-teal/40" />
+          <img src="assets/gallery-1.jpg" alt="ריקוד בטן לחינה — אמילי פלואו"
+            className="relative z-10 w-full object-cover shadow-2xl" />
+        </div>
+
+      </div>
+    </section>
+  )
+}
+
 /* ── Services ────────────────────────────────────────────── */
 const SERVICES = [
   {
     num: '01',
-    title: "ריקוד בטן לחינה",
-    subtitle: "מוצר הדגל · טרייבל פיוז'ן להופעות ושיעורים",
-    desc: "הופעת ריקוד בטן לחינה היא אחד הרגעים הכי קסומים בערב — רקדנית בטן שמביאה אנרגיה, צבע ושמחה לחגיגה שלכן. אני מתמחה בריקוד בטן טרייבל פיוז׳ן לאירועי חינה: הופעה אישית ומרגשת שמותאמת לאווירה, למוזיקה ולכלה. מחפשות רקדנית בטן לחינה? אני כאן.",
-    featured: true,
+    title: "ריקוד בטן טרייבל פיוז'ן",
+    subtitle: 'הופעות ושיעורים',
+    desc: "חיבור לגוף דרך ריקוד טרייבל פיוז'ן. תנועות ושרירים שלא היינו מודעים אליהם, תוך ריקוד משחרר, מחזק ומהפנט.",
   },
   {
     num: '02',
@@ -478,6 +534,7 @@ export default function App() {
       <main>
         <Hero />
         <Marquee />
+        <Henna />
         <Services />
         <About />
         <Gallery />
