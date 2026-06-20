@@ -140,7 +140,7 @@ function Hero() {
       </div>
 
       {/* Desktop: תמונה מלאה, טקסט אוברליי מימין */}
-      <div className="hidden md:flex relative min-h-screen">
+      <div className="hidden md:flex relative h-[88vh]">
         <div className="absolute inset-0">
           <img src="/hero-bg.jpg" alt="Emily Flow"
             className="w-full h-full object-contain object-left-bottom animate-fade-in" />
