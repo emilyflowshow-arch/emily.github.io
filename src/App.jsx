@@ -1,6 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, createContext, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './App.css'
+import { translations } from './translations'
+
+export const LangContext = createContext({ lang: 'he', t: translations.he, setLang: () => {} })
 
 function useReveal(delay = 0) {
   const ref = useRef(null)
@@ -24,7 +27,15 @@ function useReveal(delay = 0) {
 }
 
 /* ── Nav ─────────────────────────────────────────────────── */
+const LANGS = [
+  { code: 'he', label: 'עב' },
+  { code: 'en', label: 'EN' },
+  { code: 'ar', label: 'عر' },
+  { code: 'ru', label: 'РУ' },
+]
+
 function Nav() {
+  const { lang, t, setLang } = useContext(LangContext)
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -35,10 +46,10 @@ function Nav() {
   }, [])
 
   const links = [
-    { label: 'חינה',    href: '#henna'    },
-    { label: 'שירותים', href: '#services' },
-    { label: 'גלריה',   href: '#gallery'  },
-    { label: 'אודות',   href: '#about'    },
+    { label: t.nav.henna,    href: '#henna'    },
+    { label: t.nav.services, href: '#services' },
+    { label: t.nav.gallery,  href: '#gallery'  },
+    { label: t.nav.about,    href: '#about'    },
   ]
 
   return (
@@ -62,12 +73,22 @@ function Nav() {
           ))}
         </ul>
 
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3">
+          {/* Language switcher */}
+          <div className="flex items-center gap-1">
+            {LANGS.map(l => (
+              <button key={l.code} onClick={() => setLang(l.code)}
+                className={`text-[11px] font-bold px-2 py-1 transition-colors duration-200
+                  ${lang === l.code ? 'text-ink' : 'text-ink/35 hover:text-ink/70'}`}>
+                {l.label}
+              </button>
+            ))}
+          </div>
           <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
             target="_blank" rel="noopener"
             className="px-7 py-3 bg-teal text-paper text-[12px] font-bold tracking-[2px] uppercase
               hover:bg-teal-dark transition-colors duration-300">
-            הזמיני עכשיו
+            {t.nav.cta}
           </a>
         </div>
 
@@ -110,10 +131,11 @@ function Nav() {
 
 /* ── Hero ────────────────────────────────────────────────── */
 function Hero() {
+  const { t } = useContext(LangContext)
   return (
     <section id="home" className="overflow-hidden" style={{background: 'linear-gradient(to bottom, rgb(162,177,231) 0%, rgb(220,224,245) 45%, rgb(171,141,115) 100%)'}}>
 
-      {/* Mobile: תמונה למעלה, טקסט למטה */}
+      {/* Mobile */}
       <div className="md:hidden">
         <div className="relative h-[60vh]">
           <img src="/hero-bg.jpg" alt="Emily Flow"
@@ -121,21 +143,18 @@ function Hero() {
         </div>
         <div className="px-8 py-10">
           <span className="text-ink text-[13px] font-black tracking-[4px] uppercase mb-4 block">
-            תנועה · נוכחות · חוויה
+            {t.hero.tagline}
           </span>
           <h1 className="font-sans font-black text-ink leading-[0.92] mb-6 uppercase tracking-tight text-[clamp(3.5rem,14vw,6rem)]">
-            אמילי<br />פלואו
+            {t.hero.name.split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
           </h1>
           <p className="text-ink/80 text-[15px] leading-[1.8] mb-8 font-semibold">
-            רקדנית בטן טרייבל פיוז׳ן ופרפורמרית פלואו ואש ·
-            מורה ליוגה אשטנגה ויניאסה ·
-            מנחת מדיטציה ומיינדפולנס ·
-            מדריכת סדנאת ״חיבור לעצמי״
+            {t.hero.desc}
           </p>
           <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
             target="_blank" rel="noopener"
             className="inline-block px-10 py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase">
-            הזמיני עכשיו
+            {t.hero.cta}
           </a>
         </div>
       </div>
@@ -148,26 +167,23 @@ function Hero() {
           style={{WebkitMaskImage: 'linear-gradient(to right, black 55%, transparent 82%)', maskImage: 'linear-gradient(to right, black 55%, transparent 82%)', transform: 'scale(1.15)', transformOrigin: 'left center'}} />
         <div className="relative z-10 flex flex-col justify-center px-16 pt-40 pb-6 max-w-xl ml-auto">
           <span className="inline-flex items-center gap-3 text-ink text-[13px] font-black tracking-[4px] uppercase mb-8 animate-fade-up">
-            תנועה · נוכחות · חוויה
+            {t.hero.tagline}
           </span>
           <h1 className="font-sans font-black text-ink leading-[0.92] mb-10 animate-fade-up uppercase tracking-tight text-[clamp(3.6rem,9.6vw,8rem)]">
-            אמילי<br />פלואו
+            {t.hero.name.split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
           </h1>
           <p className="text-ink/80 text-[16px] leading-[1.8] mb-12 max-w-md animate-fade-up font-semibold">
-            רקדנית בטן טרייבל פיוז׳ן ופרפורמרית פלואו ואש ·
-            מורה ליוגה אשטנגה ויניאסה ·
-            מנחת מדיטציה ומיינדפולנס ·
-            מדריכת סדנאת ״חיבור לעצמי״
+            {t.hero.desc}
           </p>
           <div className="flex items-center gap-5 flex-wrap animate-fade-up">
             <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
               target="_blank" rel="noopener"
               className="inline-block px-10 py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase hover:bg-teal-dark transition-colors duration-300">
-              הזמיני עכשיו
+              {t.hero.cta}
             </a>
             <a href="#services"
               className="inline-flex items-center gap-3 text-[13px] font-bold tracking-[2px] uppercase text-ink hover:text-muted transition-colors duration-300">
-              <span>גלי עוד</span>
+              <span>{t.hero.scroll}</span>
               <span className="w-8 h-px bg-current" />
             </a>
           </div>
@@ -361,6 +377,7 @@ function ServiceRow({ num, title, subtitle, desc, delay, featured }) {
 
 /* ── About ───────────────────────────────────────────────── */
 function About() {
+  const { t } = useContext(LangContext)
   const [ref, visible] = useReveal()
   const [imgRef, imgVisible] = useReveal(150)
   return (
@@ -376,28 +393,21 @@ function About() {
 
         {/* Text */}
         <div ref={ref} className={`reveal order-1 md:order-2 ${visible ? 'visible' : ''}`}>
-          <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-6 block">אודות</span>
+          <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-6 block">{t.about.label}</span>
           <h2 className="font-sans font-black text-ink uppercase tracking-tight text-display-md mb-4">
-            היי,<br />אני אמילי
+            {t.about.title.split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
           </h2>
           <p className="text-teal font-semibold text-[15px] tracking-wide mb-8">
-            אמנית פרפורמנס שמלמדת נוכחות דרך תנועה
+            {t.about.subtitle}
           </p>
           <div className="space-y-5 text-ink/65 text-[15px] leading-[1.9] font-light">
             <p>
-              רקדנית בטן טרייבל פיוז׳ן, פרפורמרית אש, מורה ליוגה ומנחת מדיטציה —
-              העולמות שלי שונים אבל כולם מסתכמים בדבר אחד: <strong className="text-ink font-semibold">חיבור לגוף ולרגע הזה.</strong>
+              {t.about.p1} <strong className="text-ink font-semibold">{t.about.p1bold}</strong>
             </p>
-            <p>
-              אני מביאה את כל עצמי לכל הופעה, שיעור וסדנה.
-              בין אם מדובר בריקוד לבן ובת זוג בחופה, בפרפורמנס אש בפסטיבל, או בסדנת מדיטציה —
-              המטרה היא תמיד אותה: לגרום לאנשים להרגיש משהו אמיתי.
-            </p>
-            <p className="text-ink/80 font-medium">
-              ניסיון עשיר בהופעות לחינות, חתונות ואירועים ברחבי הארץ.
-            </p>
+            <p>{t.about.p2}</p>
+            <p className="text-ink/80 font-medium">{t.about.exp}</p>
             <div className="flex flex-wrap gap-2 pt-1">
-              {['חינה', 'חתונה', 'מסיבת רווקות', 'חאפלה', 'פסטיבלים', 'מסעדות שף', 'אירועי בוטיק'].map(tag => (
+              {t.about.events.map(tag => (
                 <span key={tag} className="px-3 py-1 border border-ink/20 text-ink/60 text-[12px] font-semibold tracking-wide">
                   {tag}
                 </span>
@@ -409,12 +419,12 @@ function About() {
               target="_blank" rel="noopener"
               className="px-9 py-4 bg-ink text-paper text-[12px] font-bold tracking-[3px] uppercase
                 hover:bg-ink-soft transition-colors duration-300">
-              צרי קשר
+              {t.about.contact}
             </a>
             <a href="#gallery"
               className="px-9 py-4 border-2 border-ink text-ink text-[12px] font-bold tracking-[3px] uppercase
                 hover:bg-ink hover:text-paper transition-all duration-300">
-              גלריה
+              {t.about.gallery}
             </a>
           </div>
         </div>
@@ -502,23 +512,23 @@ const SOCIALS = [
 
 function Contact() {
   const [ref, visible] = useReveal()
+  const { t } = useContext(LangContext)
   return (
     <section id="contact" className="py-28 px-8 md:px-20 bg-ink text-paper">
       <div className="max-w-6xl mx-auto">
         <div ref={ref} className={`reveal mb-16 ${visible ? 'visible' : ''}`}>
           <span className="text-muted-light text-[11px] font-bold tracking-[4px] uppercase mb-4 block">
-            בואו נדבר
+            {t.contact.title.replace('\n', ' ')}
           </span>
           <h2 className="font-sans font-black text-paper uppercase tracking-tight text-display-lg">
-            צור קשר
+            {t.contact.label}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
           <div>
             <p className="text-paper/60 text-[16px] leading-[1.9] mb-12 font-light">
-              שמחה לשמוע ממך לגבי הופעות, שיעורים, סדנאות, ועוד.
-              ניתן למצוא אותי בכל הרשתות החברתיות:
+              {t.contact.desc}
             </p>
             <div className="flex flex-col gap-2">
               {SOCIALS.map((s, i) => (
@@ -550,7 +560,7 @@ function Contact() {
                 target="_blank" rel="noopener"
                 className="block w-full text-center py-4 bg-[#25D366] text-paper text-[12px] font-bold tracking-[3px] uppercase
                   hover:bg-[#1ebe5d] transition-colors duration-300">
-                וואטסאפ — שלחי הודעה
+                {t.contact.cta}
               </a>
             </div>
 
@@ -580,8 +590,16 @@ function Footer() {
 
 /* ── App ─────────────────────────────────────────────────── */
 export default function App() {
+  const [lang, setLang] = useState('he')
+  const t = translations[lang]
+
+  useEffect(() => {
+    document.documentElement.dir = t.dir
+    document.documentElement.lang = lang
+  }, [lang, t.dir])
+
   return (
-    <>
+    <LangContext.Provider value={{ lang, t, setLang }}>
       <Nav />
       <main>
         <Hero />
@@ -593,6 +611,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </LangContext.Provider>
   )
 }
