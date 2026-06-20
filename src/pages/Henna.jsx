@@ -109,9 +109,14 @@ export default function HennaPage() {
                 <p className="text-ink/50 text-sm leading-relaxed mb-6 font-light">
                   השאירי פרטים ואחזור אליכן בהקדם עם כל המידע והמחירים.
                 </p>
+                <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%95%D7%A4%D7%A2%D7%94%20%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%A2%20%F0%9F%99%8F"
+                  target="_blank" rel="noopener"
+                  className="block w-full text-center py-4 bg-[#25D366] text-paper text-[12px] font-bold tracking-[3px] uppercase hover:bg-[#1ebe5d] transition-colors duration-300">
+                  וואטסאפ — שלחי הודעה
+                </a>
                 <a href="mailto:emilyrich1187@gmail.com"
-                  className="block w-full text-center py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase hover:bg-teal-dark transition-colors duration-300">
-                  צרי קשר עכשיו
+                  className="block w-full text-center py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase hover:bg-teal-dark transition-colors duration-300 mt-3">
+                  שלחי מייל
                 </a>
               </div>
             </div>
