@@ -111,54 +111,68 @@ function Nav() {
 /* ── Hero ────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex overflow-hidden bg-paper-warm">
-      {/* Photo */}
-      <div className="absolute inset-0 md:left-0 md:right-[45%]">
-        <img src="/hero-bg.jpg" alt="Emily Flow"
-          className="w-full h-full object-cover object-center animate-fade-in" />
-        <div className="absolute inset-0 bg-gradient-to-l from-paper-warm via-paper-warm/50 to-transparent md:via-transparent" />
-      </div>
+    <section id="home" className="bg-paper-warm overflow-hidden">
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col justify-end pb-24 px-8 md:px-20 pt-36 max-w-3xl md:mr-0 md:ml-auto">
-        <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up"
-          style={{ animationDelay: '0.1s' }}>
-          ריקוד · אש · יוגה
-        </span>
-
-        <h1 className="font-sans font-black text-ink leading-[0.92] mb-10 animate-fade-up uppercase tracking-tight
-          text-[clamp(4.5rem,12vw,10rem)]"
-          style={{ animationDelay: '0.2s' }}>
-          אמילי<br />פלואו
-        </h1>
-
-        <p className="text-ink/60 text-[16px] leading-[1.8] mb-12 max-w-md animate-fade-up font-light"
-          style={{ animationDelay: '0.35s' }}>
-          רקדנית בטן טרייבל פיוז׳ן ופרפורמרית אש ·
-          מורה ליוגה אשטנגה ויניאסה ·
-          מנחת סדנאת ״חיבור לעצמי״
-        </p>
-
-        <div className="flex items-center gap-5 flex-wrap animate-fade-up" style={{ animationDelay: '0.5s' }}>
+      {/* Mobile: תמונה למעלה, טקסט למטה */}
+      <div className="md:hidden">
+        <div className="relative h-[60vh]">
+          <img src="/hero-bg.jpg" alt="Emily Flow"
+            className="w-full h-full object-cover object-center animate-fade-in" />
+        </div>
+        <div className="px-8 py-10">
+          <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-4 block">
+            ריקוד · אש · יוגה
+          </span>
+          <h1 className="font-sans font-black text-ink leading-[0.92] mb-6 uppercase tracking-tight text-[clamp(3.5rem,14vw,6rem)]">
+            אמילי<br />פלואו
+          </h1>
+          <p className="text-ink/60 text-[15px] leading-[1.8] mb-8 font-light">
+            רקדנית בטן טרייבל פיוז׳ן ופרפורמרית אש ·
+            מורה ליוגה אשטנגה ויניאסה ·
+            מנחת סדנאת ״חיבור לעצמי״
+          </p>
           <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
             target="_blank" rel="noopener"
-            className="inline-block px-10 py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase
-              hover:bg-teal-dark transition-colors duration-300">
+            className="inline-block px-10 py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase">
             הזמיני עכשיו
-          </a>
-          <a href="#services"
-            className="inline-flex items-center gap-3 text-[13px] font-bold tracking-[2px] uppercase text-ink
-              hover:text-muted transition-colors duration-300">
-            <span>גלי עוד</span>
-            <span className="w-8 h-px bg-current" />
           </a>
         </div>
       </div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
-        <span className="w-px h-10 bg-ink animate-pulse" />
+      {/* Desktop: תמונה שמאל, טקסט ימין */}
+      <div className="hidden md:flex relative min-h-screen">
+        <div className="absolute inset-0 left-0 right-[45%]">
+          <img src="/hero-bg.jpg" alt="Emily Flow"
+            className="w-full h-full object-cover object-center animate-fade-in" />
+          <div className="absolute inset-0 bg-gradient-to-l from-paper-warm via-paper-warm/30 to-transparent" />
+        </div>
+        <div className="relative z-10 flex flex-col justify-end pb-24 px-20 pt-36 max-w-3xl ml-auto">
+          <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up">
+            ריקוד · אש · יוגה
+          </span>
+          <h1 className="font-sans font-black text-ink leading-[0.92] mb-10 animate-fade-up uppercase tracking-tight text-[clamp(4.5rem,12vw,10rem)]">
+            אמילי<br />פלואו
+          </h1>
+          <p className="text-ink/60 text-[16px] leading-[1.8] mb-12 max-w-md animate-fade-up font-light">
+            רקדנית בטן טרייבל פיוז׳ן ופרפורמרית אש ·
+            מורה ליוגה אשטנגה ויניאסה ·
+            מנחת סדנאת ״חיבור לעצמי״
+          </p>
+          <div className="flex items-center gap-5 flex-wrap animate-fade-up">
+            <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
+              target="_blank" rel="noopener"
+              className="inline-block px-10 py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase hover:bg-teal-dark transition-colors duration-300">
+              הזמיני עכשיו
+            </a>
+            <a href="#services"
+              className="inline-flex items-center gap-3 text-[13px] font-bold tracking-[2px] uppercase text-ink hover:text-muted transition-colors duration-300">
+              <span>גלי עוד</span>
+              <span className="w-8 h-px bg-current" />
+            </a>
+          </div>
+        </div>
       </div>
+
     </section>
   )
 }
