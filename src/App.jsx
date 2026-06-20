@@ -51,7 +51,7 @@ function Nav() {
         </a>
 
         {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-10 list-none">
+        <ul className="hidden md:flex items-center gap-6 list-none">
           {links.map(l => (
             <li key={l.href}>
               <a href={l.href}
@@ -139,13 +139,13 @@ function Hero() {
         </div>
       </div>
 
-      {/* Desktop: תמונה מלאה, טקסט ימין */}
+      {/* Desktop: תמונה מלאה, טקסט אוברליי מימין */}
       <div className="hidden md:flex relative min-h-screen">
-        <div className="absolute top-20 bottom-0 left-0 w-[60%]">
+        <div className="absolute inset-0">
           <img src="/hero-bg.jpg" alt="Emily Flow"
-            className="w-full h-full object-cover object-left-top animate-fade-in" />
+            className="w-full h-full object-contain object-left animate-fade-in" />
         </div>
-        <div className="relative z-10 flex flex-col justify-end pb-6 px-20 pt-36 max-w-2xl ml-auto">
+        <div className="relative z-10 flex flex-col justify-center px-16 pt-24 pb-6 max-w-xl ml-auto backdrop-blur-md bg-gradient-to-l from-paper/80 via-paper/50 to-transparent">
           <span className="inline-flex items-center gap-3 text-muted text-[11px] font-bold tracking-[4px] uppercase mb-8 animate-fade-up">
             ריקוד · אש · יוגה
           </span>
