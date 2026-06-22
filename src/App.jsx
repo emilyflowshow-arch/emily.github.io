@@ -151,7 +151,7 @@ function Hero() {
           <h1 className="font-sans font-black text-ink leading-[0.92] mb-6 uppercase tracking-tight text-[clamp(3.5rem,14vw,6rem)]">
             {t.hero.name.split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
           </h1>
-          <div className="flex flex-col gap-4 mb-8">
+          <div className="flex flex-col gap-2 mb-8">
             {t.hero.desc.split('\n').filter(l => l.trim()).map((line, i) => (
               <p key={i} className="text-ink/70 text-[15px] leading-[1.7] font-light">{line}</p>
             ))}
@@ -177,7 +177,7 @@ function Hero() {
           <h1 className="font-sans font-black text-ink leading-[0.92] mb-10 animate-fade-up uppercase tracking-tight text-[clamp(3.6rem,9.6vw,8rem)]">
             {t.hero.name.split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
           </h1>
-          <div className="flex flex-col gap-4 mb-12 max-w-md animate-fade-up">
+          <div className="flex flex-col gap-2 mb-12 max-w-md animate-fade-up">
             {t.hero.desc.split('\n').filter(l => l.trim()).map((line, i) => (
               <p key={i} className="text-ink/70 text-[15px] leading-[1.7] font-light">{line}</p>
             ))}
@@ -299,7 +299,8 @@ function Services() {
 
         <div className="border-t border-ink/10">
           {t.services.items.map((s, i) => (
-            <ServiceRow key={i} {...s} delay={i * 100} featuredLabel={t.services.featuredLabel} />
+            <ServiceRow key={i} {...s} delay={i * 100} featuredLabel={t.services.featuredLabel}
+              rowId={['belly-dance','tribal','performance','elements','classes'][i]} />
           ))}
         </div>
       </div>
@@ -307,10 +308,10 @@ function Services() {
   )
 }
 
-function ServiceRow({ num, title, subtitle, desc, delay, featured, featuredLabel }) {
+function ServiceRow({ num, title, subtitle, desc, delay, featured, featuredLabel, rowId }) {
   const [ref, visible] = useReveal(delay)
   return (
-    <div ref={ref}
+    <div id={rowId} ref={ref}
       className={`reveal service-card group flex items-start gap-6 md:gap-12 py-10 px-4 border-b border-ink/10 cursor-default ${visible ? 'visible' : ''} ${featured ? 'bg-paper-warm' : ''}`}>
       <span className="font-sans text-sm text-muted font-bold leading-none mt-1 shrink-0 select-none">{num}</span>
       <div className="flex flex-col md:flex-row md:items-center md:gap-12 flex-1">
