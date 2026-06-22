@@ -151,9 +151,11 @@ function Hero() {
           <h1 className="font-sans font-black text-ink leading-[0.92] mb-6 uppercase tracking-tight text-[clamp(3.5rem,14vw,6rem)]">
             {t.hero.name.split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
           </h1>
-          <p className="text-ink/80 text-[15px] leading-[1.8] mb-8 font-semibold">
-            {t.hero.desc}
-          </p>
+          <div className="flex flex-col gap-4 mb-8">
+            {t.hero.desc.split('\n').filter(l => l.trim()).map((line, i) => (
+              <p key={i} className="text-ink/70 text-[15px] leading-[1.7] font-light">{line}</p>
+            ))}
+          </div>
           <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
             target="_blank" rel="noopener"
             className="inline-block px-10 py-4 bg-teal text-paper text-[12px] font-bold tracking-[3px] uppercase">
@@ -175,9 +177,11 @@ function Hero() {
           <h1 className="font-sans font-black text-ink leading-[0.92] mb-10 animate-fade-up uppercase tracking-tight text-[clamp(3.6rem,9.6vw,8rem)]">
             {t.hero.name.split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
           </h1>
-          <p className="text-ink/80 text-[16px] leading-[1.8] mb-12 max-w-md animate-fade-up font-semibold">
-            {t.hero.desc}
-          </p>
+          <div className="flex flex-col gap-4 mb-12 max-w-md animate-fade-up">
+            {t.hero.desc.split('\n').filter(l => l.trim()).map((line, i) => (
+              <p key={i} className="text-ink/70 text-[15px] leading-[1.7] font-light">{line}</p>
+            ))}
+          </div>
           <div className="flex items-center gap-5 flex-wrap animate-fade-up">
             <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
               target="_blank" rel="noopener"
