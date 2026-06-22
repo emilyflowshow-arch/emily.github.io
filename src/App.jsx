@@ -165,19 +165,19 @@ function Hero() {
       </div>
 
       {/* Desktop: תמונה טבעית שמאלה, גרדיאנט מטשטש לימין */}
-      <div className="hidden md:flex relative h-[88vh] overflow-hidden">
+      <div className="hidden md:flex relative h-[80vh] overflow-hidden">
         {/* התמונה בגובה מלא, רוחב טבעי — נמסה לשקיפות מימין */}
         <img src="/hero-bg.jpg" alt="Emily Flow"
           className="absolute top-0 left-0 h-full w-auto animate-fade-in"
           style={{WebkitMaskImage: 'linear-gradient(to right, black 55%, transparent 82%)', maskImage: 'linear-gradient(to right, black 55%, transparent 82%)', transform: 'scale(1.15)', transformOrigin: 'left center'}} />
-        <div className="relative z-10 flex flex-col justify-center px-16 pt-20 pb-6 max-w-xl ml-auto">
-          <span className="inline-flex items-center gap-3 text-ink text-[13px] font-black tracking-[4px] uppercase mb-8 animate-fade-up">
+        <div className="relative z-10 flex flex-col justify-center px-16 pt-16 pb-6 max-w-xl ml-auto">
+          <span className="inline-flex items-center gap-3 text-ink text-[13px] font-black tracking-[4px] uppercase mb-6 animate-fade-up">
             {t.hero.tagline}
           </span>
-          <h1 className="font-sans font-black text-ink leading-[0.92] mb-10 animate-fade-up uppercase tracking-tight text-[clamp(3.6rem,9.6vw,8rem)]">
+          <h1 className="font-sans font-black text-ink leading-[0.92] mb-6 animate-fade-up uppercase tracking-tight text-[clamp(3rem,7.5vw,6.5rem)]">
             {t.hero.name.split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
           </h1>
-          <div className="flex flex-col gap-2 mb-12 max-w-md animate-fade-up">
+          <div className="flex flex-col gap-2 mb-8 max-w-md animate-fade-up">
             {t.hero.desc.split('\n').filter(l => l.trim()).map((line, i) => (
               <p key={i} className="text-ink/70 text-[15px] leading-[1.7] font-light">{line}</p>
             ))}
