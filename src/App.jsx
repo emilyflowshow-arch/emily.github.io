@@ -300,7 +300,7 @@ function Services() {
         <div className="border-t border-ink/10">
           {t.services.items.map((s, i) => (
             <ServiceRow key={i} {...s} delay={i * 100} featuredLabel={t.services.featuredLabel}
-              rowId={['belly-dance','tribal','performance','elements','classes'][i]} />
+              rowId={['belly-dance','tribal','performance','elements','classes','mindfulness'][i]} />
           ))}
         </div>
       </div>
