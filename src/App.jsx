@@ -46,10 +46,13 @@ function Nav() {
   }, [])
 
   const links = [
-    { label: t.nav.henna,    href: '#henna'    },
-    { label: t.nav.services, href: '#services' },
-    { label: t.nav.gallery,  href: '#gallery'  },
-    { label: t.nav.about,    href: '#about'    },
+    { label: t.nav.about,       href: '#about'       },
+    { label: t.nav.bellyDance,  href: '#belly-dance' },
+    { label: t.nav.tribal,      href: '#tribal'      },
+    { label: t.nav.performance, href: '#performance' },
+    { label: t.nav.elements,    href: '#elements'    },
+    { label: t.nav.classes,     href: '#classes'     },
+    { label: t.nav.gallery,     href: '#gallery'     },
   ]
 
   return (

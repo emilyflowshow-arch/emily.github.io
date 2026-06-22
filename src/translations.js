@@ -2,11 +2,14 @@ export const translations = {
   he: {
     dir: 'rtl',
     nav: {
-      henna: 'חינה',
-      services: 'מה אני מציעה',
-      gallery: 'גלריה',
-      about: 'אודות',
-      cta: 'הזמיני עכשיו',
+      about:       'אודות',
+      bellyDance:  'ריקודי בטן לאירועים',
+      tribal:      "טרייבל פיוז'ן",
+      performance: 'פרפורמנס ואווירה',
+      elements:    'אלמנטים מיוחדים',
+      classes:     'שיעורים וסדנאות',
+      gallery:     'גלריה',
+      cta:         'הזמיני עכשיו',
     },
     hero: {
       tagline: 'תנועה · נוכחות · חוויה',
@@ -70,11 +73,14 @@ export const translations = {
   en: {
     dir: 'ltr',
     nav: {
-      henna: 'Henna',
-      services: 'Services',
-      gallery: 'Gallery',
-      about: 'About',
-      cta: 'Book Now',
+      about:       'About',
+      bellyDance:  'Belly Dance',
+      tribal:      'Tribal Fusion',
+      performance: 'Performance',
+      elements:    'Special Elements',
+      classes:     'Classes & Workshops',
+      gallery:     'Gallery',
+      cta:         'Book Now',
     },
     hero: {
       tagline: 'Movement · Presence · Experience',
@@ -138,11 +144,14 @@ export const translations = {
   ar: {
     dir: 'rtl',
     nav: {
-      henna: 'حنة',
-      services: 'خدمات',
-      gallery: 'معرض',
-      about: 'عني',
-      cta: 'احجزي الآن',
+      about:       'عني',
+      bellyDance:  'رقص البطن',
+      tribal:      'رقص قبلي',
+      performance: 'أداء وأجواء',
+      elements:    'عناصر خاصة',
+      classes:     'دروس وورش',
+      gallery:     'معرض',
+      cta:         'احجزي الآن',
     },
     hero: {
       tagline: 'حركة · حضور · تجربة',
@@ -206,11 +215,14 @@ export const translations = {
   ru: {
     dir: 'ltr',
     nav: {
-      henna: 'Хна',
-      services: 'Услуги',
-      gallery: 'Галерея',
-      about: 'Обо мне',
-      cta: 'Забронировать',
+      about:       'Обо мне',
+      bellyDance:  'Танец живота',
+      tribal:      'Tribal Fusion',
+      performance: 'Перформанс',
+      elements:    'Особые элементы',
+      classes:     'Уроки и мастер-классы',
+      gallery:     'Галерея',
+      cta:         'Забронировать',
     },
     hero: {
       tagline: 'Движение · Присутствие · Опыт',
