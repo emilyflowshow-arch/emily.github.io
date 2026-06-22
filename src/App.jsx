@@ -281,11 +281,11 @@ function Services() {
   const { t } = useContext(LangContext)
   const [titleRef, titleVisible] = useReveal()
   return (
-    <section id="services" className="py-28 px-8 md:px-20 bg-paper">
+    <section id="services" className="py-12 px-8 md:px-20 bg-paper">
       <div className="max-w-6xl mx-auto">
-        <div ref={titleRef} className={`reveal mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6 ${titleVisible ? 'visible' : ''}`}>
+        <div ref={titleRef} className={`reveal mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4 ${titleVisible ? 'visible' : ''}`}>
           <div>
-            <h2 className="font-sans font-black text-ink uppercase tracking-tight text-display-lg">
+            <h2 className="font-sans font-black text-ink uppercase tracking-tight text-[clamp(1.6rem,3vw,2.4rem)]">
               {t.services.badge}
             </h2>
           </div>
@@ -312,7 +312,7 @@ function ServiceRow({ num, title, subtitle, desc, delay, featured, featuredLabel
   const [ref, visible] = useReveal(delay)
   return (
     <div id={rowId} ref={ref}
-      className={`reveal service-card group flex items-start gap-6 md:gap-12 py-10 px-4 border-b border-ink/10 cursor-default ${visible ? 'visible' : ''} ${featured ? 'bg-paper-warm' : ''}`}>
+      className={`reveal service-card group flex items-start gap-6 md:gap-12 py-5 px-4 border-b border-ink/10 cursor-default ${visible ? 'visible' : ''} ${featured ? 'bg-paper-warm' : ''}`}>
       <span className="font-sans text-sm text-muted font-bold leading-none mt-1 shrink-0 select-none">{num}</span>
       <div className="flex flex-col md:flex-row md:items-center md:gap-12 flex-1">
         <div className="md:w-72 shrink-0 mb-3 md:mb-0">
