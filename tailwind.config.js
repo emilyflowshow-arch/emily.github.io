@@ -19,6 +19,7 @@ export default {
       fontFamily: {
         sans:    ['Heebo', 'sans-serif'],
         display: ['Heebo', 'sans-serif'],
+        nav:     ['Assistant', 'sans-serif'],
       },
       fontSize: {
         'display-xl': ['clamp(4rem,10vw,9rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],

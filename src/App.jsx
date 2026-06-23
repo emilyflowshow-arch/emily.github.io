@@ -64,40 +64,40 @@ function Nav() {
         </a>
 
         {/* Desktop */}
-        <ul className="hidden md:flex flex-1 items-center justify-evenly list-none mx-12">
+        <ul className="hidden md:flex flex-1 items-center justify-evenly list-none mx-16">
           {links.map(l => (
             <li key={l.href}>
               <a href={l.href}
-                className="nav-link font-sans text-[14px] font-black tracking-[2px] uppercase text-ink hover:text-teal transition-colors duration-300">
+                className="nav-link font-nav text-[14px] font-bold tracking-[1px] text-ink hover:text-teal transition-colors duration-300">
                 {l.label}
               </a>
             </li>
           ))}
           <li>
             <Link to="/חינה/איך-לבחור"
-              className="nav-link font-sans text-[14px] font-black tracking-[2px] uppercase text-teal hover:text-teal-dark transition-colors duration-300">
+              className="nav-link font-nav text-[14px] font-bold tracking-[1px] text-teal hover:text-teal-dark transition-colors duration-300">
               מאמרים
             </Link>
           </li>
         </ul>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex flex-col items-end justify-center gap-0.5 shrink-0">
+          <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
+            target="_blank" rel="noopener"
+            className="px-6 py-1.5 bg-teal text-paper text-[11px] font-bold tracking-[2px] uppercase
+              hover:bg-teal-dark transition-colors duration-300 leading-tight">
+            {t.nav.cta}
+          </a>
           {/* Language switcher */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-0">
             {LANGS.map(l => (
               <button key={l.code} onClick={() => setLang(l.code)}
-                className={`text-[11px] font-bold px-2 py-1 transition-colors duration-200
+                className={`text-[10px] font-bold px-1.5 py-0.5 transition-colors duration-200
                   ${lang === l.code ? 'text-ink' : 'text-ink/35 hover:text-ink/70'}`}>
                 {l.label}
               </button>
             ))}
           </div>
-          <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
-            target="_blank" rel="noopener"
-            className="px-7 py-3 bg-teal text-paper text-[12px] font-bold tracking-[2px] uppercase
-              hover:bg-teal-dark transition-colors duration-300">
-            {t.nav.cta}
-          </a>
         </div>
 
         {/* Mobile hamburger */}
