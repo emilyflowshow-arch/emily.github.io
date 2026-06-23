@@ -74,7 +74,7 @@ function Nav() {
           ))}
           <li>
             <Link to="/חינה/איך-לבחור"
-              className="nav-link font-nav text-[16px] font-bold tracking-[1px] text-teal hover:text-teal-dark transition-colors duration-300">
+              className="nav-link font-nav text-[16px] font-bold tracking-[1px] text-ink hover:text-teal transition-colors duration-300">
               מאמרים
             </Link>
           </li>
