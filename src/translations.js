@@ -7,7 +7,7 @@ export const translations = {
       tribal:      "טרייבל פיוז'ן",
       performance: 'פרפורמנס ואווירה',
       elements:    'אלמנטים מיוחדים',
-      classes:     'שיעורים וסדנאות',
+      classes:     'סדנאות',
       gallery:     'גלריה',
       cta:         'הזמיני עכשיו',
     },
