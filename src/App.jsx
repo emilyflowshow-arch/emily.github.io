@@ -78,24 +78,24 @@ function Nav() {
               מאמרים
             </Link>
           </li>
+          <li>
+            <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
+              target="_blank" rel="noopener"
+              className="nav-link font-nav text-[16px] font-bold tracking-[1px] text-ink hover:text-teal transition-colors duration-300">
+              צור קשר
+            </a>
+          </li>
         </ul>
 
-        <div className="hidden md:flex flex-col items-end justify-center gap-0.5 shrink-0">
-          <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
-            target="_blank" rel="noopener"
-            className="font-nav text-[16px] font-bold tracking-[1px] text-ink hover:text-teal transition-colors duration-300">
-            צור קשר
-          </a>
-          {/* Language switcher */}
-          <div className="flex items-center gap-0">
-            {LANGS.map(l => (
-              <button key={l.code} onClick={() => setLang(l.code)}
-                className={`text-[10px] font-bold px-1.5 py-0.5 transition-colors duration-200
-                  ${lang === l.code ? 'text-ink' : 'text-ink/35 hover:text-ink/70'}`}>
-                {l.label}
-              </button>
-            ))}
-          </div>
+        {/* Language switcher 2×2 */}
+        <div className="hidden md:grid grid-cols-2 gap-x-0 gap-y-0 shrink-0">
+          {LANGS.map(l => (
+            <button key={l.code} onClick={() => setLang(l.code)}
+              className={`text-[10px] font-bold px-1.5 py-0.5 leading-tight transition-colors duration-200
+                ${lang === l.code ? 'text-ink' : 'text-ink/35 hover:text-ink/70'}`}>
+              {l.label}
+            </button>
+          ))}
         </div>
 
         {/* Mobile hamburger */}
