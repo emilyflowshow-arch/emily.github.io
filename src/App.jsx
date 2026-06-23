@@ -46,11 +46,9 @@ function Nav() {
   }, [])
 
   const links = [
-    { label: t.nav.about,       href: '#about'       },
     { label: t.nav.bellyDance,  href: '#belly-dance' },
     { label: t.nav.performance, href: '#performance' },
     { label: t.nav.classes,     href: '#classes'     },
-    { label: t.nav.gallery,     href: '#gallery'     },
   ]
 
   return (
