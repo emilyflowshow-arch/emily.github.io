@@ -432,7 +432,7 @@ function Gallery() {
 
         {/* YouTube video */}
         <div className="mb-8 flex justify-center">
-          <div className="w-48 md:w-56" style={{ aspectRatio: '9/16' }}>
+          <div className="w-64 md:w-72" style={{ aspectRatio: '9/16' }}>
             <iframe
               className="w-full h-full"
               src="https://www.youtube.com/embed/XtDMnzfxs4A"
