@@ -163,7 +163,7 @@ export default function HowToChoosePage() {
               </h2>
               <p>
                 מחיר הופעת רקדנית בטן לחינה בישראל נע בדרך כלל בין{' '}
-                <strong className="text-ink font-semibold">1,000 ל־3,000 ₪</strong>,
+                <strong className="text-ink font-semibold">1,200 ל־3,000 ₪</strong>,
                 בהתאם לניסיון, משך ההופעה, מיקום האירוע, מורכבות המופע והמוניטין של הרקדנית.
               </p>
               <p className="mt-4">
