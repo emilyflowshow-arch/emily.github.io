@@ -50,30 +50,35 @@ function Nav() {
     { label: t.nav.bellyDance,  href: '#belly-dance' },
     { label: t.nav.tribal,      href: '#tribal'      },
     { label: t.nav.performance, href: '#performance' },
-    { label: t.nav.elements,    href: '#elements'    },
     { label: t.nav.classes,     href: '#classes'     },
     { label: t.nav.gallery,     href: '#gallery'     },
   ]
 
   return (
     <>
-      <nav className={`fixed inset-x-0 top-0 z-50 flex items-center justify-between px-8 md:px-16 transition-all duration-500 backdrop-blur-md
-        ${scrolled ? 'py-4 bg-paper/95 border-b border-ink/8 shadow-sm' : 'py-4 bg-paper/85 border-b border-ink/8'}`}>
+      <nav className={`fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 md:px-12 transition-all duration-500 backdrop-blur-md
+        ${scrolled ? 'py-3 bg-paper/95 border-b border-ink/8 shadow-sm' : 'py-3 bg-paper/85 border-b border-ink/8'}`}>
 
-        <a href="#" className="font-sans text-lg font-black text-ink tracking-tight uppercase">
+        <a href="#" className="font-sans text-base font-black text-ink tracking-tight uppercase shrink-0">
           Emily Flow
         </a>
 
         {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-6 list-none">
+        <ul className="hidden md:flex flex-1 items-center justify-evenly list-none mx-12">
           {links.map(l => (
             <li key={l.href}>
               <a href={l.href}
-                className="nav-link text-[13px] font-semibold tracking-[2px] uppercase text-ink hover:text-ink transition-colors duration-300">
+                className="nav-link font-sans text-[14px] font-black tracking-[2px] uppercase text-ink hover:text-teal transition-colors duration-300">
                 {l.label}
               </a>
             </li>
           ))}
+          <li>
+            <Link to="/חינה/איך-לבחור"
+              className="nav-link font-sans text-[14px] font-black tracking-[2px] uppercase text-teal hover:text-teal-dark transition-colors duration-300">
+              מאמרים
+            </Link>
+          </li>
         </ul>
 
         <div className="hidden md:flex items-center gap-3">
@@ -119,6 +124,12 @@ function Nav() {
               </a>
             </li>
           ))}
+          <li>
+            <Link to="/חינה/איך-לבחור" onClick={() => setOpen(false)}
+              className="block px-8 py-5 text-sm font-bold uppercase tracking-widest text-teal border-b border-ink/8 hover:bg-paper-warm transition-colors duration-200">
+              מאמרים
+            </Link>
+          </li>
         </ul>
         <div className="px-8">
           <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
