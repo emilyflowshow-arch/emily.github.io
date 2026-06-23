@@ -435,7 +435,7 @@ function Gallery() {
           <div className="w-48 md:w-56" style={{ aspectRatio: '9/16' }}>
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/pKPfTwnrIsk"
+              src="https://www.youtube.com/embed/XtDMnzfxs4A"
               title="אמילי פלואו — ריקוד בטן"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
