@@ -83,9 +83,8 @@ function Nav() {
         <div className="hidden md:flex flex-col items-end justify-center gap-0.5 shrink-0">
           <a href="https://wa.me/972544880750?text=%D7%94%D7%99%D7%99%20%D7%90%D7%9E%D7%99%D7%9C%D7%99%21%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%F0%9F%99%8F"
             target="_blank" rel="noopener"
-            className="px-6 py-1.5 bg-teal text-paper text-[11px] font-bold tracking-[2px] uppercase
-              hover:bg-teal-dark transition-colors duration-300 leading-tight">
-            {t.nav.cta}
+            className="font-nav text-[16px] font-bold tracking-[1px] text-ink hover:text-teal transition-colors duration-300">
+            צור קשר
           </a>
           {/* Language switcher */}
           <div className="flex items-center gap-0">
