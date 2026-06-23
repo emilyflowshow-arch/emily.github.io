@@ -3,7 +3,7 @@ export const translations = {
     dir: 'rtl',
     nav: {
       about:       'אודות',
-      bellyDance:  'ריקודי בטן לאירועים',
+      bellyDance:  'רקדנית בטן לאירועים',
       tribal:      "טרייבל פיוז'ן",
       performance: 'פרפורמנס ואווירה',
       elements:    'אלמנטים מיוחדים',
