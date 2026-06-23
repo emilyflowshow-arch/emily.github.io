@@ -155,6 +155,38 @@ export default function HennaPage() {
           </div>
         </section>
 
+        {/* Articles grid */}
+        <section className="py-20 px-8 md:px-20 bg-paper">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-sans font-black text-ink uppercase tracking-tight text-[clamp(1.4rem,3vw,2rem)] mb-10">
+              מדריכים שיעזרו לכן להחליט
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { title: 'איך לבחור רקדנית בטן לחינה?', desc: '7 דברים שחשוב לבדוק לפני שמזמינות', href: '/חינה/איך-לבחור', ready: true },
+                { title: 'כמה עולה רקדנית בטן לאירוע?', desc: 'טווח מחירים, מה משפיע על העלות ומה לשאול', href: '/חינה/כמה-עולה', ready: false },
+                { title: '7 דברים לבדוק לפני שמזמינות', desc: 'רשימת תיוג שתחסוך כאבי ראש', href: '/חינה/7-דברים', ready: false },
+                { title: "ריקוד בטן vs טרייבל פיוז'ן", desc: 'מה ההבדל ואיזה סגנון מתאים לכן', href: '/חינה/בטן-vs-טרייבל', ready: false },
+                { title: 'רעיונות לאטרקציות לחינה', desc: 'כל האפשרויות — מריקוד בטן ועד אש', href: '/חינה/אטרקציות-לחינה', ready: false },
+                { title: 'איך רקדנית בטן משנה את האווירה?', desc: 'למה זה עובד — ומה ההבדל שעושה רקדנית טובה', href: '/חינה/איך-משנה-אווירה', ready: false },
+              ].map((article, i) => (
+                article.ready
+                  ? <Link key={i} to={article.href}
+                      className="group block p-6 border border-ink/10 bg-paper-warm hover:border-teal/40 hover:bg-paper transition-all duration-300">
+                      <h3 className="font-black text-ink text-[17px] mb-2 group-hover:text-teal transition-colors duration-200">{article.title}</h3>
+                      <p className="text-ink/50 text-[13px] font-light leading-relaxed">{article.desc}</p>
+                      <span className="inline-block mt-4 text-[11px] font-bold tracking-[2px] uppercase text-teal">קראי עוד →</span>
+                    </Link>
+                  : <div key={i} className="p-6 border border-ink/10 bg-paper-warm opacity-50 cursor-default">
+                      <h3 className="font-black text-ink text-[17px] mb-2">{article.title}</h3>
+                      <p className="text-ink/50 text-[13px] font-light leading-relaxed">{article.desc}</p>
+                      <span className="inline-block mt-4 text-[11px] font-bold tracking-[2px] uppercase text-muted">בקרוב</span>
+                    </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
       </main>
 
       {/* Footer */}
