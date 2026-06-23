@@ -46,7 +46,7 @@ function Nav() {
   }, [])
 
   const links = [
-    { label: t.nav.bellyDance,  href: '#belly-dance' },
+    { label: t.nav.bellyDance,  href: '#henna' },
     { label: t.nav.performance, href: '#performance' },
     { label: t.nav.classes,     href: '#classes'     },
   ]
