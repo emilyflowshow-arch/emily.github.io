@@ -430,6 +430,19 @@ function Gallery() {
           </h2>
         </div>
 
+        {/* YouTube video */}
+        <div className="mb-6 max-w-xs">
+          <div className="relative w-full" style={{ paddingBottom: '177.78%' }}>
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/pKPfTwnrIsk"
+              title="אמילי פלואו — ריקוד בטן"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2" style={{ gridAutoRows: '240px' }}>
           {GALLERY_SRCS.map((g, i) => (
             <GalleryItem key={i} src={g.src} span={g.span} label={t.gallery.items[i]} delay={i * 70} />
