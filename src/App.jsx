@@ -431,10 +431,10 @@ function Gallery() {
         </div>
 
         {/* YouTube video */}
-        <div className="mb-6 max-w-xs">
-          <div className="relative w-full" style={{ paddingBottom: '177.78%' }}>
+        <div className="mb-8 flex justify-center">
+          <div className="w-48 md:w-56" style={{ aspectRatio: '9/16' }}>
             <iframe
-              className="absolute inset-0 w-full h-full"
+              className="w-full h-full"
               src="https://www.youtube.com/embed/pKPfTwnrIsk"
               title="אמילי פלואו — ריקוד בטן"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
