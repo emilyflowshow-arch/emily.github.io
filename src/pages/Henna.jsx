@@ -24,16 +24,16 @@ export default function HennaPage() {
       <main className="pt-24">
 
         {/* Hero */}
-        <section className="py-12 px-8 md:px-20 bg-paper-warm">
+        <section className="py-6 px-8 md:px-20 bg-paper-warm">
           <div className="max-w-4xl mx-auto">
-            <Link to="/" className="inline-flex items-center gap-2 text-muted text-[12px] font-bold tracking-[2px] uppercase mb-6 hover:text-ink transition-colors">
+            <Link to="/" className="inline-flex items-center gap-2 text-muted text-[12px] font-bold tracking-[2px] uppercase mb-3 hover:text-ink transition-colors">
               <span>←</span> חזרה לדף הבית
             </Link>
-            <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-3 block">מוצר דגל</span>
-            <h1 className="font-sans font-black text-ink uppercase tracking-tight leading-[0.95] mb-4 text-[clamp(2.5rem,6vw,5rem)]">
+            <span className="text-muted text-[11px] font-bold tracking-[4px] uppercase mb-2 block">מוצר דגל</span>
+            <h1 className="font-sans font-black text-ink uppercase tracking-tight leading-[0.95] mb-2 text-[clamp(1.8rem,4vw,3rem)]">
               אמילי פלואו<br />רקדנית בטן לחינה
             </h1>
-            <p className="text-ink/60 text-[16px] leading-[1.8] max-w-2xl font-light">
+            <p className="text-ink/60 text-[14px] leading-[1.6] max-w-2xl font-light">
               חינה אחת. רגע אחד שכולן יזכרו.
             </p>
           </div>
