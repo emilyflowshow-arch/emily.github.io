@@ -68,14 +68,14 @@ function Nav() {
           {links.map(l => (
             <li key={l.href}>
               <a href={l.href}
-                className="nav-link font-nav text-[14px] font-bold tracking-[1px] text-ink hover:text-teal transition-colors duration-300">
+                className="nav-link font-nav text-[16px] font-bold tracking-[1px] text-ink hover:text-teal transition-colors duration-300">
                 {l.label}
               </a>
             </li>
           ))}
           <li>
             <Link to="/חינה/איך-לבחור"
-              className="nav-link font-nav text-[14px] font-bold tracking-[1px] text-teal hover:text-teal-dark transition-colors duration-300">
+              className="nav-link font-nav text-[16px] font-bold tracking-[1px] text-teal hover:text-teal-dark transition-colors duration-300">
               מאמרים
             </Link>
           </li>
@@ -181,14 +181,14 @@ function Hero() {
         <img src="/hero-bg.jpg" alt="Emily Flow"
           className="absolute top-0 left-0 h-full w-auto animate-fade-in"
           style={{WebkitMaskImage: 'linear-gradient(to right, black 55%, transparent 82%)', maskImage: 'linear-gradient(to right, black 55%, transparent 82%)', transform: 'scale(1.15)', transformOrigin: 'left center'}} />
-        <div className="relative z-10 flex flex-col justify-center px-16 pt-16 pb-6 max-w-xl ml-auto">
-          <span className="inline-flex items-center gap-3 text-ink text-[13px] font-black tracking-[4px] uppercase mb-6 animate-fade-up">
+        <div className="relative z-10 flex flex-col justify-center px-16 pt-24 pb-4 max-w-xl ml-auto">
+          <span className="inline-flex items-center gap-3 text-ink text-[13px] font-black tracking-[4px] uppercase mb-3 animate-fade-up">
             {t.hero.tagline}
           </span>
-          <h1 className="font-sans font-black text-ink leading-[0.92] mb-6 animate-fade-up uppercase tracking-tight text-[clamp(3rem,7.5vw,6.5rem)]">
+          <h1 className="font-sans font-black text-ink leading-[0.92] mb-4 animate-fade-up uppercase tracking-tight text-[clamp(2.8rem,7vw,6rem)]">
             {t.hero.name.split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
           </h1>
-          <div className="flex flex-col gap-2 mb-8 max-w-md animate-fade-up">
+          <div className="flex flex-col gap-2 mb-6 max-w-md animate-fade-up">
             {t.hero.desc.split('\n').filter(l => l.trim()).map((line, i) => (
               <p key={i} className="text-ink/70 text-[15px] leading-[1.7] font-light">{line}</p>
             ))}
